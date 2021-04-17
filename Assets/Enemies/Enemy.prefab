@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2953178417664053597}
   - component: {fileID: 2953178417664053596}
   - component: {fileID: 2953178417664053586}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  defaultBullet: {fileID: 185481414277592438, guid: 0b031cb803d4244faa021a976666f138, type: 3}
+  movementIntensity: 0
+  defaultBullet: {fileID: 0}
   gunPlacement:
   - {fileID: 2953178416970352122}
   attackScript: {fileID: 0}

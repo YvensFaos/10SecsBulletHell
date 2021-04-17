@@ -57,6 +57,7 @@
       <Path>../../../Library/Unity/cache/packages/packages.unity.com/com.unity.searcher@4.3.1</Path>
     </explicitIncludes>
     <explicitExcludes>
+      <Path>.git</Path>
       <Path>.idea</Path>
       <Path>Library</Path>
       <Path>Logs</Path>

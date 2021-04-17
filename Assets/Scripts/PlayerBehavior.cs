@@ -17,8 +17,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private AttackScript attackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
 
-
     private Rigidbody _rigidbody;
+    private bool _controllable;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (IsAlive())
+        if (IsAlive() && _controllable)
         {
             var horizontal = Input.GetAxis("Horizontal"); 
             var vertical =Input.GetAxis("Vertical");
@@ -95,4 +95,6 @@ public class PlayerBehavior : MonoBehaviour
             TakeDamage();
         }
     }
+
+    public void AllowControl(bool control) => _controllable = control;
 }

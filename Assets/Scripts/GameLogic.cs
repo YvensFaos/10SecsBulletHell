@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
@@ -12,6 +10,8 @@ public class GameLogic : MonoBehaviour
 
    private PlayerBehavior _player;
    public PlayerBehavior Player => _player;
+
+   private TimeMeter _timeMeter;
 
    private void Awake()
    {
@@ -27,10 +27,28 @@ public class GameLogic : MonoBehaviour
          Debug.LogError("No Player Found In The Scene.");
          return;
       }
+
+      _timeMeter = FindObjectOfType<TimeMeter>();
+      if (_timeMeter == null)
+      {
+         Debug.LogError("No Time Meter Found In The Scene.");
+         return;
+      }
+   }
+
+   public void StartLevel()
+   {
+      _timeMeter.StartTimeMeter();
+      _player.AllowControl(true);
+   }
+
+   public void NotifyTimesUp()
+   {
+      
    }
 
    public void NotifyPlayerIsDead()
    {
-      
+      _timeMeter.StopTimeMeter();
    }
 }

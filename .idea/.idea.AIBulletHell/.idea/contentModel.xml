@@ -92,6 +92,7 @@
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="TimeMeter.cs" t="Include" />
+          <e p="XPPointsLabel.cs" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">

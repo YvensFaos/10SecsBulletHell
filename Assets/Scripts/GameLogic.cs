@@ -13,6 +13,9 @@ public class GameLogic : MonoBehaviour
 
    private TimeMeter _timeMeter;
 
+   [SerializeField]
+   private XpPointsLabel _xpPointsLabel;
+
    private void Awake()
    {
       if (_instance != null)
@@ -36,6 +39,13 @@ public class GameLogic : MonoBehaviour
       }
    }
 
+   private int _xpPoints;
+
+   private void Start()
+   {
+      StartLevel();
+   }
+
    public void StartLevel()
    {
       _timeMeter.StartTimeMeter();
@@ -44,11 +54,30 @@ public class GameLogic : MonoBehaviour
 
    public void NotifyTimesUp()
    {
+      ++_xpPoints;
+      if (_xpPointsLabel != null)
+      {
+         _xpPointsLabel.UpdateXpPointsLabel(_xpPoints);   
+      }
       
+      _timeMeter.StartTimeMeter();
    }
 
    public void NotifyPlayerIsDead()
    {
       _timeMeter.StopTimeMeter();
    }
+
+   public bool TryToSpendXpPoints(int cost)
+   {
+      if (_xpPoints - cost >= 0)
+      {
+         _xpPoints -= cost;
+         return true;
+      }
+
+      return false;
+   }
+
+   public int GetXpPoints() => _xpPoints;
 }

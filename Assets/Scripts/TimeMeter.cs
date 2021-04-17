@@ -21,6 +21,7 @@ public class TimeMeter : MonoBehaviour
 
    public void StartTimeMeter()
    {
+       timeMeterImage.fillAmount = 0.0f;
        _timerTween = timeMeterImage.DOFillAmount(1.0f, 10.0f);
        _timerTween.OnComplete(() =>
        {

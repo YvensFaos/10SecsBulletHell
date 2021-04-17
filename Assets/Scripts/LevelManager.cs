@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
       _middlePointX = (_minPosition.x + _maxPosition.x) / 2.0f;
    }
 
-   public void SpawnMore(bool shouldProgress)
+   public void SpawnMore(bool shouldProgress = false)
    {
       if (shouldProgress)
       {

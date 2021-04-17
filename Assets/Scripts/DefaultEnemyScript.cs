@@ -14,6 +14,7 @@ public class DefaultEnemyScript : MonoBehaviour
 {
     [Header("Enemy Info")] [SerializeField]
     private int health = 3;
+    private int _currentHealth;
 
     [SerializeField] private float actTimer = 1.0f;
     private int _movementDirection;
@@ -75,6 +76,7 @@ public class DefaultEnemyScript : MonoBehaviour
         _internalCurvePosition = 0.0f;
         _logicCoroutine = EnemyLogic();
         _movementDirection = 1;
+        _currentHealth = health;
         if (flipDirection)
         {
             _movementDirection = -1;
@@ -90,7 +92,7 @@ public class DefaultEnemyScript : MonoBehaviour
             customMechanicScripts.ForEach(customMechanicScript => customMechanicScript.PerformCustomMechanic());
         }
 
-        while (health > 0)
+        while (_currentHealth > 0)
         {
             if (priorities.alwaysUseCustomMechanic)
             {
@@ -163,8 +165,8 @@ public class DefaultEnemyScript : MonoBehaviour
 
     public void TakeDamage()
     {
-        health -= _player.GetPlayerBulletDamage();
-        if (health <= 0)
+        _currentHealth -= _player.GetPlayerBulletDamage();
+        if (_currentHealth <= 0)
         {
             Die();
         }

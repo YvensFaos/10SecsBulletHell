@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6109492716592283681}
   - component: {fileID: 6109492716592283686}
+  - component: {fileID: 7766142307449087958}
   - component: {fileID: 6109492716592283687}
   m_Layer: 6
   m_Name: Player
@@ -129,6 +130,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7766142307449087958
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109492716592283685}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!114 &6109492716592283687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39608d7d98e24ca6bd06e18238cdac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
+  defaultBullet: {fileID: 0}
+  gunPlacement: []
+  attackScript: {fileID: 0}
+  customMechanicScripts: []

@@ -28,4 +28,9 @@ public class GameLogic : MonoBehaviour
          return;
       }
    }
+
+   public void NotifyPlayerIsDead()
+   {
+      
+   }
 }

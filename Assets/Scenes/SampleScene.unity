@@ -708,6 +708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2068246953, guid: 0b031cb803d4244faa021a976666f138, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 185481414277592436, guid: 0b031cb803d4244faa021a976666f138, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -865,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2953178417664053599, guid: fc3bebececeb54c27b071bb673e8031c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3bebececeb54c27b071bb673e8031c, type: 3}
 --- !u!1001 &6109492717486906156
@@ -874,6 +882,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6109492716578502071, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6109492716592283681, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -921,6 +933,10 @@ PrefabInstance:
     - target: {fileID: 6109492716592283685, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: velocity
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
@@ -982,6 +998,10 @@ PrefabInstance:
     - target: {fileID: 694658992791862402, guid: 7881000f8964d4f5abadc42e7c008ec3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806455430671153247, guid: 7881000f8964d4f5abadc42e7c008ec3, type: 3}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7881000f8964d4f5abadc42e7c008ec3, type: 3}

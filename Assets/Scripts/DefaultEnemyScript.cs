@@ -15,7 +15,8 @@ public class DefaultEnemyScript : MonoBehaviour
 
     [SerializeField] private float actTimer = 1.0f;
 
-    [Header("Enemy Configuration")] [SerializeField]
+    [Header("Enemy Configuration")] 
+    [SerializeField]
     private AnimationCurve movementCurve;
 
     [SerializeField] private float movementIntensity;

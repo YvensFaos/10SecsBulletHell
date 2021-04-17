@@ -87,6 +87,7 @@
           <e p="LevelManager.cs" t="Include" />
           <e p="PlayerBehavior.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
+            <e p="CameraShakeControl.cs" t="Include" />
             <e p="FPSCounter.cs" t="Include" />
             <e p="RemoveMyRenderer.cs" t="Include" />
           </e>

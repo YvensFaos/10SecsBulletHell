@@ -17,6 +17,9 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private AttackScript attackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
 
+    [Header("Player Particles")]
+    [SerializeField] private ParticleSystem damageParticles;
+    
     private Rigidbody _rigidbody;
     private bool _controllable;
 
@@ -84,15 +87,25 @@ public class PlayerBehavior : MonoBehaviour
         {
             GameLogic.GetInstance().NotifyPlayerIsDead();
         }
+        else
+        {
+            GameLogic.GetInstance().CameraShake(0.5f);
+            damageParticles.Play();
+        }
     }
 
     public bool IsAlive() => health > 0;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Enemy"))
+        var isEnemyBullet = other.gameObject.CompareTag("EnemyBullet");
+        if (isEnemyBullet || other.gameObject.CompareTag("Enemy"))
         {
             TakeDamage();
+            if (isEnemyBullet)
+            {
+                LeanPool.Despawn(other.gameObject);
+            }
         }
     }
 

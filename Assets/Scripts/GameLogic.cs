@@ -18,6 +18,8 @@ public class GameLogic : MonoBehaviour
 
    [SerializeField]
    private XpPointsLabel xpPointsLabel;
+   [SerializeField]
+   private CameraShakeControl cameraShake;
 
    private void Awake()
    {
@@ -91,4 +93,5 @@ public class GameLogic : MonoBehaviour
    }
 
    public int GetXpPoints() => _xpPoints;
+   public void CameraShake(float time) => cameraShake.ShakeCameraFor(time);
 }

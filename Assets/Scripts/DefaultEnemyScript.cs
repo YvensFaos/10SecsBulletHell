@@ -40,6 +40,9 @@ public class DefaultEnemyScript : MonoBehaviour
 
     [Header("Enemy Priorities")] [SerializeField]
     private EnemyPrioritySO priorities;
+    
+    [Header("Player Particles")]
+    [SerializeField] private ParticleSystem damageParticles;
 
     /// <summary>
     /// Used to calculated the added priority values and facilitate the querying for actions.
@@ -166,6 +169,11 @@ public class DefaultEnemyScript : MonoBehaviour
     public void TakeDamage()
     {
         _currentHealth -= _player.GetPlayerBulletDamage();
+        if (damageParticles != null)
+        {
+            damageParticles.Play();    
+        }
+        
         if (_currentHealth <= 0)
         {
             Die();

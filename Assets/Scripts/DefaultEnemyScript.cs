@@ -74,7 +74,6 @@ public class DefaultEnemyScript : MonoBehaviour
             else
             {
                 var action = GetAction();
-                Debug.Log("Is going to " + action);
                 switch (action)
                 {
                     case EnemyPriorityEnum.Attack:
@@ -100,7 +99,10 @@ public class DefaultEnemyScript : MonoBehaviour
                         // Does nothing
                         break;
                     case EnemyPriorityEnum.Custom:
-                        ExecuteAllCustomScripts();
+                        if (!priorities.alwaysUseCustomMechanic)
+                        {
+                            ExecuteAllCustomScripts();    
+                        }
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

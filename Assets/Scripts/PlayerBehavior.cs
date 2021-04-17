@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Lean.Pool;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody))]
@@ -33,7 +34,40 @@ public class PlayerBehavior : MonoBehaviour
             
             var newMovement = new Vector3(horizontal * velocity, vertical * velocity, 0.0f);
             transform.Translate(newMovement);
+
+            if (Input.GetButtonUp("Fire1"))
+            {
+                if (attackScript != null)
+                {
+                    attackScript.PerformAttack();
+                }
+                else
+                {
+                    PerformSimpleAttack();
+                }
+            }
+
+            if (Input.GetButtonUp("Fire2"))
+            {
+                ExecuteAllCustomScripts();
+            }
         }
+    }
+    
+    private void ExecuteAllCustomScripts()
+    {
+        customMechanicScripts.ForEach(customMechanicScript => customMechanicScript.PerformCustomMechanic());
+    }
+    
+    /// <summary>
+    /// Invoked when there is not specific AttackScript
+    /// </summary>
+    private void PerformSimpleAttack()
+    {
+        gunPlacement.ForEach(gunPlacementTransform =>
+        {
+            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+        });
     }
 
     public int GetPlayerBulletDamage()

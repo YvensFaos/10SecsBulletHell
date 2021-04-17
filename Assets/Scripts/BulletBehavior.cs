@@ -32,7 +32,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void Impulse()
     {
-        _rigidbody.AddForce(direction * shootForce);
+        _rigidbody.AddForce(direction * shootForce, ForceMode.Impulse);
     }
 
     public void SetDirection(Vector2 newDirection)

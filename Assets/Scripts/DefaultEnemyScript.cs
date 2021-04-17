@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using Lean.Pool;
 using UnityEngine;
 using UnityTemplateProjects;
@@ -40,6 +42,7 @@ public class DefaultEnemyScript : MonoBehaviour
     private float _enemyPrioritySum;
     private IEnumerator _logicCoroutine;
     private PlayerBehavior _player;
+    private TweenerCore<Vector3, Vector3, VectorOptions> _internalTween;
 
     void Start()
     {
@@ -93,7 +96,7 @@ public class DefaultEnemyScript : MonoBehaviour
                     case EnemyPriorityEnum.Moving:
                         _internalCurvePosition += movementIntensity;
                         var newPosition = movementCurve.Evaluate(_internalCurvePosition);
-                        transform.DOMove(new Vector3(newPosition, transform.position.y - _internalCurvePosition), actTimer);
+                        _internalTween = transform.DOMove(new Vector3(newPosition, transform.position.y - _internalCurvePosition), actTimer);
                         break;
                     case EnemyPriorityEnum.Waiting:
                         // Does nothing
@@ -129,9 +132,15 @@ public class DefaultEnemyScript : MonoBehaviour
         health -= _player.GetPlayerBulletDamage();
         if (health <= 0)
         {
-            StopCoroutine(_logicCoroutine);
-            LeanPool.Despawn(this);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        _internalTween.Kill();
+        StopCoroutine(_logicCoroutine);
+        LeanPool.Despawn(this);
     }
 
     private EnemyPriorityEnum GetAction()

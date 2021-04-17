@@ -51,6 +51,8 @@ public class PlayerBehavior : MonoBehaviour
             {
                 ExecuteAllCustomScripts();
             }
+
+            _rigidbody.velocity = Vector3.zero;
         }
     }
     

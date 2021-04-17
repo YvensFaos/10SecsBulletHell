@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1}
-  shootForce: 25
+  shootForce: 1
 --- !u!1 &185481414481605124
 GameObject:
   m_ObjectHideFlags: 0

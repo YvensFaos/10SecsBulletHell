@@ -85,6 +85,7 @@
           <e p="PlayerBehavior.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
             <e p="FPSCounter.cs" t="Include" />
+            <e p="RemoveMyRenderer.cs" t="Include" />
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
@@ -94,12 +95,6 @@
               <e p="ReadmeEditor.cs" t="Include" />
             </e>
             <e p="Readme.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Unity.VisualScripting.Generated" t="Include">
-          <e p="VisualScripting.Core" t="Include">
-            <e p="AotStubs.cs" t="Include" />
-            <e p="link.xml" t="Include" />
           </e>
         </e>
       </e>

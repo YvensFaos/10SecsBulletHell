@@ -4,8 +4,10 @@
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Pool/Scripts/LeanPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/XPPointsLabel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPriority.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -41,12 +43,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyPriorityEnum.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomMechanicScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AttackScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BulletBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XPPointsLabel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BulletBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" />
       </list>
     </option>
   </component>

@@ -1,3 +1,5 @@
+using System;
+using Lean.Pool;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -38,6 +40,24 @@ public class BulletBehavior : MonoBehaviour
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        ResolveCollision(other.gameObject);
+    }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        ResolveCollision(other.gameObject);
+    }
+
+    private void ResolveCollision(GameObject other)
+    {
+        if (other.CompareTag("BoderCollider"))
+        {
+            LeanPool.Despawn(this);
+        }
     }
 
     private void OnDrawGizmos()

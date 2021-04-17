@@ -13,8 +13,11 @@ public class GameLogic : MonoBehaviour
 
    private TimeMeter _timeMeter;
 
+   private LevelManager _levelManager;
+   public LevelManager Level => _levelManager;
+
    [SerializeField]
-   private XpPointsLabel _xpPointsLabel;
+   private XpPointsLabel xpPointsLabel;
 
    private void Awake()
    {
@@ -37,6 +40,13 @@ public class GameLogic : MonoBehaviour
          Debug.LogError("No Time Meter Found In The Scene.");
          return;
       }
+
+      _levelManager = FindObjectOfType<LevelManager>();
+      if (_levelManager == null)
+      {
+         Debug.LogError("No Level Manager Found In The Scene.");
+         return;
+      }
    }
 
    private int _xpPoints;
@@ -55,12 +65,13 @@ public class GameLogic : MonoBehaviour
    public void NotifyTimesUp()
    {
       ++_xpPoints;
-      if (_xpPointsLabel != null)
+      if (xpPointsLabel != null)
       {
-         _xpPointsLabel.UpdateXpPointsLabel(_xpPoints);   
+         xpPointsLabel.UpdateXpPointsLabel(_xpPoints);   
       }
       
       _timeMeter.StartTimeMeter();
+      _levelManager.SpawnMore(false);
    }
 
    public void NotifyPlayerIsDead()

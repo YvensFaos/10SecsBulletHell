@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2953178416392810487
+--- !u!1 &1940378943121281913
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2953178416392810484}
-  - component: {fileID: 2953178416392810485}
+  - component: {fileID: 1940378943121281918}
+  m_Layer: 0
+  m_Name: EnemyCannonL
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1940378943121281918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940378943121281913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.328, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3909520660711728052}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3909520659432283422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3909520659432283421}
+  - component: {fileID: 3909520659432283420}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -17,27 +47,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2953178416392810484
+--- !u!4 &3909520659432283421
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178416392810487}
+  m_GameObject: {fileID: 3909520659432283422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2953178417664053597}
+  m_Father: {fileID: 3909520660711728052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2953178416392810485
+--- !u!212 &3909520659432283420
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178416392810487}
+  m_GameObject: {fileID: 3909520659432283422}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c007d6677790c4f28a234d80a99d2bff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9674973e27f3457197481b2b1034597, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -83,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2953178416970352101
+--- !u!1 &3909520659997062924
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,29 +121,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2953178416970352122}
+  - component: {fileID: 3909520659997062931}
   m_Layer: 0
-  m_Name: EnemyCannon
+  m_Name: EnemyCannonR
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2953178416970352122
+--- !u!4 &3909520659997062931
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178416970352101}
+  m_GameObject: {fileID: 3909520659997062924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.455, z: 0}
+  m_LocalPosition: {x: 0.328, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2953178417664053597}
+  m_Father: {fileID: 3909520660711728052}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2953178417664053599
+--- !u!1 &3909520660711728054
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,58 +151,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2953178417664053597}
-  - component: {fileID: 2953178417664053596}
-  - component: {fileID: 2953178417664053586}
+  - component: {fileID: 3909520660711728052}
+  - component: {fileID: 3909520660711728053}
+  - component: {fileID: 3909520660711728059}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: DoubleEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2953178417664053597
+--- !u!4 &3909520660711728052
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178417664053599}
+  m_GameObject: {fileID: 3909520660711728054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2953178416392810484}
-  - {fileID: 2953178416970352122}
+  - {fileID: 3909520659432283421}
+  - {fileID: 3909520659997062931}
+  - {fileID: 1940378943121281918}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2953178417664053596
+--- !u!135 &3909520660711728053
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178417664053599}
+  m_GameObject: {fileID: 3909520660711728054}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.36
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2953178417664053586
+--- !u!114 &3909520660711728059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953178417664053599}
+  m_GameObject: {fileID: 3909520660711728054}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f153a4b53bbd440f923db8934854ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 1
   actTimer: 0.5
   movementCurve:
     serializedVersion: 2
@@ -180,29 +211,75 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 17.870947
+      outSlope: 17.870947
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.029165626
+      value: 0.52121735
+      inSlope: 9.358564
+      outSlope: 9.358564
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25393313
+      value: 0.71141165
+      inSlope: -5.351241
+      outSlope: -5.351241
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.26508474
+      value: 0.52761394
+      inSlope: -0.9014056
+      outSlope: -0.9014056
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.33534262
+      value: -0.44486445
+      inSlope: -0.70916
+      outSlope: -0.70916
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7032771
+      value: 0.5621784
+      inSlope: 0.30291578
+      outSlope: -0.31965134
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.4053541
+      outWeight: 0.63365215
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 0
+      inSlope: -1.8946242
+      outSlope: -1.8946242
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   movementIntensity: 0.1
-  movementOnY: 1.5
+  movementOnY: 2
   defaultBullet: {fileID: 2068246954, guid: 0b031cb803d4244faa021a976666f138, type: 3}
   gunPlacement:
-  - {fileID: 2953178416970352122}
+  - {fileID: 3909520659997062931}
+  - {fileID: 1940378943121281918}
   attackScript: {fileID: 0}
   customMechanicScripts: []
   shieldBehavior: {fileID: 0}

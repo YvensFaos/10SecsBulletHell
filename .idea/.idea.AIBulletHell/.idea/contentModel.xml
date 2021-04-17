@@ -90,7 +90,10 @@
             <e p="FPSCounter.cs" t="Include" />
             <e p="RemoveMyRenderer.cs" t="Include" />
           </e>
+          <e p="ShieldBehavior.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="SpawnEnemiesSO.cs" t="Include" />
+          <e p="SpawnInfo.cs" t="Include" />
           <e p="TimeMeter.cs" t="Include" />
           <e p="XPPointsLabel.cs" t="Include" />
         </e>

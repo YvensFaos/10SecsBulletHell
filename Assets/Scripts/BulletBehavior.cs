@@ -1,4 +1,3 @@
-using System;
 using Lean.Pool;
 using UnityEngine;
 
@@ -34,7 +33,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void Impulse()
     {
-        _rigidbody.AddForce(direction * shootForce, ForceMode.Impulse);
+        _rigidbody.velocity = direction * shootForce;
     }
 
     public void SetDirection(Vector2 newDirection)

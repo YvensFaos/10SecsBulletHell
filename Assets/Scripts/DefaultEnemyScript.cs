@@ -16,20 +16,26 @@ public class DefaultEnemyScript : MonoBehaviour
     private int health = 3;
 
     [SerializeField] private float actTimer = 1.0f;
-
+    private int _movementDirection;
+    
     [Header("Enemy Configuration")] 
     [SerializeField]
     private AnimationCurve movementCurve;
 
     [SerializeField] private float movementIntensity;
+    [SerializeField] private float movementOnY;
     private float _internalCurvePosition;
+    private Vector3 _minPosition;
+    private Vector3 _maxPosition;
 
     [SerializeField] private BulletBehavior defaultBullet;
     [SerializeField] private List<Transform> gunPlacement;
 
     [SerializeField] private AttackScript attackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
+    [SerializeField] private ShieldBehavior shieldBehavior;
 
+    private bool _hasShield;
 
     [Header("Enemy Priorities")] [SerializeField]
     private EnemyPrioritySO priorities;
@@ -44,20 +50,36 @@ public class DefaultEnemyScript : MonoBehaviour
     private PlayerBehavior _player;
     private TweenerCore<Vector3, Vector3, VectorOptions> _internalTween;
 
-    void Start()
+    private void Start()
     {
         _player = GameLogic.GetInstance().Player;
+        _hasShield = shieldBehavior != null;
+        if (_hasShield)
+        {
+            shieldBehavior.gameObject.SetActive(false);
+        }
+        _movementDirection = 1;
+        
         CalculatePrioritySum();
+        var levelManager = GameLogic.GetInstance().Level;
+        _minPosition = levelManager.MinPosition;
+        _maxPosition = levelManager.MaxPosition;
         Initiate();
     }
 
     /// <summary>
     /// Should be called whenever the enemy is reinserted into the scene.
     /// </summary>
-    public void Initiate()
+    public void Initiate(bool flipDirection = false)
     {
         _internalCurvePosition = 0.0f;
         _logicCoroutine = EnemyLogic();
+        _movementDirection = 1;
+        if (flipDirection)
+        {
+            _movementDirection = -1;
+        }
+        
         StartCoroutine(_logicCoroutine);
     }
 
@@ -88,15 +110,27 @@ public class DefaultEnemyScript : MonoBehaviour
                         {
                             PerformSimpleAttack();
                         }
-
                         break;
                     case EnemyPriorityEnum.Defend:
-                        // ?
+                        if (_hasShield)
+                        {
+                            shieldBehavior.gameObject.SetActive(true);
+                            shieldBehavior.TurnShieldOn();
+                        }
                         break;
                     case EnemyPriorityEnum.Moving:
+                        var position = transform.position;
                         _internalCurvePosition += movementIntensity;
-                        var newPosition = movementCurve.Evaluate(_internalCurvePosition);
-                        _internalTween = transform.DOMove(new Vector3(newPosition, transform.position.y - _internalCurvePosition), actTimer);
+                        var newPosition = _movementDirection * movementCurve.Evaluate(_internalCurvePosition);
+                        var moveTo = new Vector3(position.x + newPosition, position.y - movementOnY);
+                        moveTo.x = Mathf.Clamp(moveTo.x, _minPosition.x, _maxPosition.x);
+                        _internalTween = transform.DOMove(moveTo, actTimer).OnComplete(() =>
+                        {
+                            if (transform.position.y < GameLogic.GetInstance().Level.LimitY)
+                            {
+                                Die();
+                            }
+                        });
                         break;
                     case EnemyPriorityEnum.Waiting:
                         // Does nothing

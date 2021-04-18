@@ -1733,7 +1733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version 0.1 Barely Surviving
+  m_Text: Version 0.2 Trying to Surve
 --- !u!222 &740304514
 CanvasRenderer:
   m_ObjectHideFlags: 0

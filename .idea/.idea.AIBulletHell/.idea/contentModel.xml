@@ -78,6 +78,7 @@
         <e p="Scripts" t="Include">
           <e p="AttackScript.cs" t="Include" />
           <e p="BulletBehavior.cs" t="Include" />
+          <e p="ControlShaderGraphMaterial.cs" t="Include" />
           <e p="CustomMechanicScript.cs" t="Include" />
           <e p="DefaultEnemyScript.cs" t="Include" />
           <e p="EnemyPriority.cs" t="Include" />

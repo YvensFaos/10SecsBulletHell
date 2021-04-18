@@ -20,6 +20,10 @@ public class PlayerBehavior : MonoBehaviour
 
     [Header("Player Particles")]
     [SerializeField] private ParticleSystem damageParticles;
+    [SerializeField] private ParticleSystem destructionParticles;
+
+    [Header("Player Controllers")] 
+    [SerializeField] private ControlShaderGraphMaterial spriteRenderer;
     
     private Rigidbody _rigidbody;
     private bool _controllable;
@@ -88,6 +92,11 @@ public class PlayerBehavior : MonoBehaviour
         if (!IsAlive())
         {
             GameLogic.GetInstance().NotifyPlayerIsDead();
+            GameLogic.GetInstance().CameraShake(1.5f);
+            spriteRenderer.SetMaterialValue("AlphaFactor", 1.0f);
+            spriteRenderer.AnimateMaterialValue("AlphaFactor", 0.0f, 0.4f);
+            destructionParticles.Play();
+            
         }
         else
         {
@@ -103,10 +112,13 @@ public class PlayerBehavior : MonoBehaviour
         var isEnemyBullet = other.gameObject.CompareTag("EnemyBullet");
         if (isEnemyBullet || other.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage();
-            if (isEnemyBullet)
+            if (IsAlive())
             {
-                LeanPool.Despawn(other.gameObject);
+                TakeDamage();  
+                if (isEnemyBullet)
+                {
+                    LeanPool.Despawn(other.gameObject);
+                }
             }
         }
     }

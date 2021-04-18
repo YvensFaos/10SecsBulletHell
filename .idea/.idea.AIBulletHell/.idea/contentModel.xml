@@ -79,6 +79,7 @@
           <e p="AttackScript.cs" t="Include" />
           <e p="BulletBehavior.cs" t="Include" />
           <e p="ControlShaderGraphMaterial.cs" t="Include" />
+          <e p="CounterBehavior.cs" t="Include" />
           <e p="CustomMechanicScript.cs" t="Include" />
           <e p="DefaultEnemyScript.cs" t="Include" />
           <e p="EnemyPriority.cs" t="Include" />
@@ -88,8 +89,10 @@
           <e p="LevelManager.cs" t="Include" />
           <e p="PlayerBehavior.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
+            <e p="ApplicationQuit.cs" t="Include" />
             <e p="CameraShakeControl.cs" t="Include" />
             <e p="FPSCounter.cs" t="Include" />
+            <e p="OpenURL.cs" t="Include" />
             <e p="RemoveMyRenderer.cs" t="Include" />
           </e>
           <e p="ShieldBehavior.cs" t="Include" />

@@ -20,6 +20,8 @@ public class GameLogic : MonoBehaviour
    private XpPointsLabel xpPointsLabel;
    [SerializeField]
    private CameraShakeControl cameraShake;
+   [SerializeField] 
+   private CounterBehavior counterBehavior;
 
    private void Awake()
    {
@@ -53,15 +55,21 @@ public class GameLogic : MonoBehaviour
 
    private int _xpPoints;
 
-   private void Start()
-   {
-      // StartLevel();
-   }
+   // private void Start()
+   // {
+   //    // StartLevel();
+   // }
 
+   public void StartGame()
+   {
+      _player.AllowControl(true);
+      counterBehavior.gameObject.SetActive(true);
+   }
+   
    public void StartLevel()
    {
       _timeMeter.StartTimeMeter();
-      _player.AllowControl(true);
+      _levelManager.SpawnMore(false);
    }
 
    public void NotifyTimesUp()
@@ -71,9 +79,8 @@ public class GameLogic : MonoBehaviour
       {
          xpPointsLabel.UpdateXpPointsLabel(_xpPoints);   
       }
-      
-      _timeMeter.StartTimeMeter();
-      _levelManager.SpawnMore(false);
+
+      StartLevel();
    }
 
    public void NotifyPlayerIsDead()

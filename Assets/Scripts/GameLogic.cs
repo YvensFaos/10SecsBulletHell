@@ -55,7 +55,7 @@ public class GameLogic : MonoBehaviour
 
    private void Start()
    {
-      StartLevel();
+      // StartLevel();
    }
 
    public void StartLevel()

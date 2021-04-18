@@ -94,4 +94,5 @@ public class GameLogic : MonoBehaviour
 
    public int GetXpPoints() => _xpPoints;
    public void CameraShake(float time) => cameraShake.ShakeCameraFor(time);
+   public void CameraShake(float time, float amplitude, float frequency, Vector3 pivot) => cameraShake.ShakeCameraFor(time, amplitude, frequency, pivot);
 }

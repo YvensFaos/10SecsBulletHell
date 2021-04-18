@@ -15,6 +15,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private List<Transform> gunPlacement;
 
     [SerializeField] private AttackScript attackScript;
+    private bool _hasAttackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
 
     [Header("Player Particles")]
@@ -26,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _hasAttackScript = attackScript != null;
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class PlayerBehavior : MonoBehaviour
 
             if (Input.GetButtonUp("Fire1"))
             {
-                if (attackScript != null)
+                if (_hasAttackScript)
                 {
                     attackScript.PerformAttack();
                 }

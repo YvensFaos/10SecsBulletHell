@@ -171,7 +171,8 @@ public class DefaultEnemyScript : MonoBehaviour
         _currentHealth -= _player.GetPlayerBulletDamage();
         if (damageParticles != null)
         {
-            damageParticles.Play();    
+            damageParticles.Play();
+            GameLogic.GetInstance().CameraShake(0.4f, 1.0f, 1.0f, Vector3.zero);
         }
         
         if (_currentHealth <= 0)

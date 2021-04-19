@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class PlayerUpgradeManager : MonoBehaviour
 {
-    [SerializeField]
-    private UpgradeTreeSO upgradeTree;
+    [SerializeField] private UpgradeTreeSO upgradeTree;
 
     [SerializeField] private UpgradePanelController panelController;
-    
+
     private HashSet<UpgradeInfo> _available;
     private List<UpgradeInfo> _unavailable;
 
     private float _inflation = 1.0f;
-    private float _internalInflationIncrease = 0.5f;
+
+    [SerializeField] private float internalInflationIncrease = 0.5f;
 
     private void Awake()
     {
         _available = new HashSet<UpgradeInfo>();
         _unavailable = new List<UpgradeInfo>();
-        
+
         var upgrades = upgradeTree.tree;
         upgrades.ForEach(info =>
         {
@@ -43,13 +43,13 @@ public class PlayerUpgradeManager : MonoBehaviour
         switch (upgradeInfo.type)
         {
             case UpgradeTypeEnum.INCREASE_HEALTH:
-                player.IncreaseHealth((int)upgradeInfo.increment);
+                player.IncreaseHealth((int) upgradeInfo.increment);
                 break;
             case UpgradeTypeEnum.BULLET_SPEED:
                 player.IncreaseBulletSpeed(upgradeInfo.increment);
                 break;
             case UpgradeTypeEnum.BULLET_DAMAGE:
-                player.IncreaseBulletDamage((int)upgradeInfo.increment);
+                player.IncreaseBulletDamage((int) upgradeInfo.increment);
                 break;
             case UpgradeTypeEnum.EXTRA_GUN:
                 // TODO
@@ -60,14 +60,16 @@ public class PlayerUpgradeManager : MonoBehaviour
             case UpgradeTypeEnum.SHIELD_HEALTH:
                 if (player.HasShieldUnlocked())
                 {
-                    player.GetShield().IncreaseShieldStrenght((int)upgradeInfo.increment);
+                    player.GetShield().IncreaseShieldStrenght((int) upgradeInfo.increment);
                 }
+
                 break;
             case UpgradeTypeEnum.SHIELD_COOLDOWN:
                 if (player.HasShieldUnlocked())
                 {
                     player.GetShield().ReduceShieldCoolddown(upgradeInfo.increment);
                 }
+
                 break;
             case UpgradeTypeEnum.MOVEMENT_SPEED:
                 player.IncreaseMovementSpeed(upgradeInfo.increment);
@@ -79,7 +81,7 @@ public class PlayerUpgradeManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
 
-        _inflation += _internalInflationIncrease;
+        _inflation += internalInflationIncrease;
         UnlockNewUpgrades(upgradeInfo.unlocks);
     }
 
@@ -103,7 +105,7 @@ public class PlayerUpgradeManager : MonoBehaviour
             panelController.RefreshValues();
         }
     }
-    
+
     public float GetInflation() => _inflation;
 
     public List<UpgradeInfo> GetAvailableUpgrades()

@@ -114,7 +114,7 @@ public class PlayerBehavior : MonoBehaviour
             spriteRenderer.SetMaterialValue("AlphaFactor", 1.0f);
             spriteRenderer.AnimateMaterialValue("AlphaFactor", 0.0f, 0.4f);
             destructionParticles.Play();
-            
+            _controllable = false;
         }
         else
         {
@@ -146,6 +146,14 @@ public class PlayerBehavior : MonoBehaviour
     public void RecoverHealth()
     {
         _currentHealth = health;
+    }
+
+    public void RebirthPlayer()
+    {
+        RecoverHealth();
+        spriteRenderer.SetMaterialValue("AlphaFactor", 0.0f);
+        spriteRenderer.AnimateMaterialValue("AlphaFactor", 1.0f, 0.4f);
+        _controllable = true;
     }
     
     //Unlock Upgrades 

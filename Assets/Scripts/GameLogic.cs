@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
@@ -17,15 +18,19 @@ public class GameLogic : MonoBehaviour
     private LevelManager _levelManager;
     public LevelManager Level => _levelManager;
 
-    [Header("Controllers")]
-    [SerializeField] private XpPointsLabel xpPointsLabel;
+    [Header("Parameters")] [SerializeField]
+    private float rebirthCost = 0.8f;
+
+    [Header("Controllers")] [SerializeField]
+    private XpPointsLabel xpPointsLabel;
+
     [SerializeField] private CameraShakeControl cameraShake;
     [SerializeField] private CounterBehavior counterBehavior;
     [SerializeField] private PlayerUpgradeManager playerUpgrade;
     [SerializeField] private UpgradePanelController upgradePanel;
+    [SerializeField] private GameObject gameOverScreen;
 
-    [Header("Cheats")] 
-    [SerializeField] private bool infiniteXp;
+    [Header("Cheats")] [SerializeField] private bool infiniteXp;
 
     private void Awake()
     {
@@ -54,7 +59,6 @@ public class GameLogic : MonoBehaviour
         if (_levelManager == null)
         {
             Debug.LogError("No Level Manager Found In The Scene.");
-            return;
         }
     }
 
@@ -91,6 +95,7 @@ public class GameLogic : MonoBehaviour
     public void NotifyPlayerIsDead()
     {
         _timeMeter.StopTimeMeter();
+        gameOverScreen.SetActive(true);
     }
 
     public bool TryToSpendXpPoints(int cost)
@@ -99,7 +104,7 @@ public class GameLogic : MonoBehaviour
         {
             return true;
         }
-        
+
         if (_xpPoints - cost >= 0)
         {
             _xpPoints -= cost;
@@ -123,6 +128,20 @@ public class GameLogic : MonoBehaviour
     public void OpenUpdateMenu()
     {
         upgradePanel.gameObject.SetActive(true);
+    }
+
+    public void RebirthPlayer()
+    {
+        _xpPoints = Mathf.FloorToInt(_xpPoints * rebirthCost);
+        xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
+        _player.RebirthPlayer();
+        _timeMeter.StartTimeMeter();
+    }
+
+    public void RestartScene()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public int GetXpPoints() => _xpPoints;

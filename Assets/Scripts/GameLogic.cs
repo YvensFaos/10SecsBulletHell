@@ -21,9 +21,10 @@ public class GameLogic : MonoBehaviour
     [Header("Parameters")] [SerializeField]
     private float rebirthCost = 0.8f;
 
-    [Header("Controllers")] [SerializeField]
-    private XpPointsLabel xpPointsLabel;
+    private int _xpPerRound = 1;
 
+    [Header("Controllers")] 
+    [SerializeField] private XpPointsLabel xpPointsLabel;
     [SerializeField] private CameraShakeControl cameraShake;
     [SerializeField] private CounterBehavior counterBehavior;
     [SerializeField] private PlayerUpgradeManager playerUpgrade;
@@ -83,7 +84,7 @@ public class GameLogic : MonoBehaviour
 
     public void NotifyTimesUp()
     {
-        ++_xpPoints;
+        _xpPoints += _xpPerRound;
         if (xpPointsLabel != null)
         {
             xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
@@ -128,6 +129,11 @@ public class GameLogic : MonoBehaviour
     public void OpenUpdateMenu()
     {
         upgradePanel.gameObject.SetActive(true);
+    }
+
+    public void IncreaseXpPerRound()
+    {
+        _xpPerRound++;
     }
 
     public void RebirthPlayer()

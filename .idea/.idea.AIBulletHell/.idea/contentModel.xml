@@ -88,6 +88,7 @@
           <e p="GameLogic.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="PlayerBehavior.cs" t="Include" />
+          <e p="PlayerUpgradeManager.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
             <e p="ApplicationQuit.cs" t="Include" />
             <e p="CameraShakeControl.cs" t="Include" />
@@ -100,6 +101,11 @@
           <e p="SpawnEnemiesSO.cs" t="Include" />
           <e p="SpawnInfo.cs" t="Include" />
           <e p="TimeMeter.cs" t="Include" />
+          <e p="UpgradeButtonLogic.cs" t="Include" />
+          <e p="UpgradeInfo.cs" t="Include" />
+          <e p="UpgradePanelController.cs" t="Include" />
+          <e p="UpgradeTreeSO.cs" t="Include" />
+          <e p="UpgradeTypeEnum.cs" t="Include" />
           <e p="XPPointsLabel.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">

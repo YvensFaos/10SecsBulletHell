@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider), typeof(Rigidbody))]
 public class PlayerBehavior : MonoBehaviour
 {
-    [Header("Player Info")] [SerializeField]
+    [Header("Player Info")] 
+    [SerializeField]
     private int health = 1;
-
+    [SerializeField] private int bulletInitialDamage = 1;
     [SerializeField] private float velocity = 1;
 
     [Header("Player Configuration")]
@@ -17,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private AttackScript attackScript;
     private bool _hasAttackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
+    [SerializeField] ShieldBehavior shieldBehavior;
 
     [Header("Player Particles")]
     [SerializeField] private ParticleSystem damageParticles;
@@ -27,11 +29,23 @@ public class PlayerBehavior : MonoBehaviour
     
     private Rigidbody _rigidbody;
     private bool _controllable;
+    
+    //Ship Properties
+    private int _currentHealth;
+    private int _bulletDamage = 1;
+    private float _bulletSpeed = 10;
+    // private int _extraGuns; //TO DO
+    private bool _shieldUnlocked;
+    private float _movementSpeed;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _hasAttackScript = attackScript != null;
+
+        _currentHealth = health;
+        _movementSpeed = velocity;
+        _bulletDamage = bulletInitialDamage;
     }
 
     private void Update()
@@ -41,7 +55,7 @@ public class PlayerBehavior : MonoBehaviour
             var horizontal = Input.GetAxis("Horizontal"); 
             var vertical =Input.GetAxis("Vertical");
             
-            var newMovement = new Vector3(horizontal * velocity, vertical * velocity, 0.0f);
+            var newMovement = new Vector3(horizontal * _movementSpeed, vertical * _movementSpeed, 0.0f);
             transform.Translate(newMovement);
 
             if (Input.GetButtonUp("Fire1"))
@@ -54,11 +68,14 @@ public class PlayerBehavior : MonoBehaviour
                 {
                     PerformSimpleAttack();
                 }
+                ExecuteAllCustomScripts();
             }
 
             if (Input.GetButtonUp("Fire2"))
             {
-                ExecuteAllCustomScripts();
+                var instance = GameLogic.GetInstance();
+                instance.PauseGame();
+                instance.OpenUpdateMenu();
             }
 
             _rigidbody.velocity = Vector3.zero;
@@ -77,18 +94,19 @@ public class PlayerBehavior : MonoBehaviour
     {
         gunPlacement.ForEach(gunPlacementTransform =>
         {
-            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            bullet.SetShootForce(_bulletSpeed);
         });
     }
 
     public int GetPlayerBulletDamage()
     {
-        return 1;
+        return _bulletDamage;
     }
     
     private void TakeDamage()
     {
-        health -= 1;
+        _currentHealth -= 1;
         if (!IsAlive())
         {
             GameLogic.GetInstance().NotifyPlayerIsDead();
@@ -105,7 +123,7 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
-    public bool IsAlive() => health > 0;
+    public bool IsAlive() => _currentHealth > 0;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -124,4 +142,32 @@ public class PlayerBehavior : MonoBehaviour
     }
 
     public void AllowControl(bool control) => _controllable = control;
+
+    public void RecoverHealth()
+    {
+        _currentHealth = health;
+    }
+    
+    //Unlock Upgrades 
+    public void IncreaseHealth(int increment)
+    {
+        health += increment;
+        _currentHealth = Mathf.Clamp(_currentHealth + increment, 0, health);
+    }
+
+    public void IncreaseBulletDamage(int increment) => _bulletDamage += increment;
+    public void IncreaseBulletSpeed(float increment) => _bulletSpeed += increment;
+    public void IncreaseMovementSpeed(float increment) => _movementSpeed += increment;
+
+    public void UnlockShield()
+    {
+        _shieldUnlocked = true;
+        if (shieldBehavior != null)
+        {
+            shieldBehavior.gameObject.SetActive(true);    
+        }
+    }
+
+    public bool HasShieldUnlocked() => _shieldUnlocked && shieldBehavior != null;
+    public ShieldBehavior GetShield() => shieldBehavior;
 }

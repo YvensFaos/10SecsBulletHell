@@ -1,105 +1,135 @@
 using UnityEngine;
+
 public class GameLogic : MonoBehaviour
 {
-   private static GameLogic _instance;
+    private static GameLogic _instance;
 
-   public static GameLogic GetInstance()
-   {
-      return _instance;
-   }
+    public static GameLogic GetInstance()
+    {
+        return _instance;
+    }
 
-   private PlayerBehavior _player;
-   public PlayerBehavior Player => _player;
+    private PlayerBehavior _player;
+    public PlayerBehavior Player => _player;
 
-   private TimeMeter _timeMeter;
+    private TimeMeter _timeMeter;
 
-   private LevelManager _levelManager;
-   public LevelManager Level => _levelManager;
+    private LevelManager _levelManager;
+    public LevelManager Level => _levelManager;
 
-   [SerializeField]
-   private XpPointsLabel xpPointsLabel;
-   [SerializeField]
-   private CameraShakeControl cameraShake;
-   [SerializeField] 
-   private CounterBehavior counterBehavior;
+    [Header("Controllers")]
+    [SerializeField] private XpPointsLabel xpPointsLabel;
+    [SerializeField] private CameraShakeControl cameraShake;
+    [SerializeField] private CounterBehavior counterBehavior;
+    [SerializeField] private PlayerUpgradeManager playerUpgrade;
+    [SerializeField] private UpgradePanelController upgradePanel;
 
-   private void Awake()
-   {
-      if (_instance != null)
-      {
-         Destroy(_instance.gameObject);
-      }
-      _instance = this;
-      
-      _player = FindObjectOfType<PlayerBehavior>();
-      if (_player == null)
-      {
-         Debug.LogError("No Player Found In The Scene.");
-         return;
-      }
+    [Header("Cheats")] 
+    [SerializeField] private bool infiniteXp;
 
-      _timeMeter = FindObjectOfType<TimeMeter>();
-      if (_timeMeter == null)
-      {
-         Debug.LogError("No Time Meter Found In The Scene.");
-         return;
-      }
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(_instance.gameObject);
+        }
 
-      _levelManager = FindObjectOfType<LevelManager>();
-      if (_levelManager == null)
-      {
-         Debug.LogError("No Level Manager Found In The Scene.");
-         return;
-      }
-   }
+        _instance = this;
 
-   private int _xpPoints;
+        _player = FindObjectOfType<PlayerBehavior>();
+        if (_player == null)
+        {
+            Debug.LogError("No Player Found In The Scene.");
+            return;
+        }
 
-   // private void Start()
-   // {
-   //    // StartLevel();
-   // }
+        _timeMeter = FindObjectOfType<TimeMeter>();
+        if (_timeMeter == null)
+        {
+            Debug.LogError("No Time Meter Found In The Scene.");
+            return;
+        }
 
-   public void StartGame()
-   {
-      _player.AllowControl(true);
-      counterBehavior.gameObject.SetActive(true);
-   }
-   
-   public void StartLevel()
-   {
-      _timeMeter.StartTimeMeter();
-      _levelManager.SpawnMore(false);
-   }
+        _levelManager = FindObjectOfType<LevelManager>();
+        if (_levelManager == null)
+        {
+            Debug.LogError("No Level Manager Found In The Scene.");
+            return;
+        }
+    }
 
-   public void NotifyTimesUp()
-   {
-      ++_xpPoints;
-      if (xpPointsLabel != null)
-      {
-         xpPointsLabel.UpdateXpPointsLabel(_xpPoints);   
-      }
+    private int _xpPoints;
 
-      StartLevel();
-   }
+    // private void Start()
+    // {
+    //    // StartLevel();
+    // }
 
-   public void NotifyPlayerIsDead()
-   {
-      _timeMeter.StopTimeMeter();
-   }
+    public void StartGame()
+    {
+        _player.AllowControl(true);
+        counterBehavior.gameObject.SetActive(true);
+    }
 
-   public bool TryToSpendXpPoints(int cost)
-   {
-      if (_xpPoints - cost >= 0)
-      {
-         _xpPoints -= cost;
-         return true;
-      }
+    public void StartLevel()
+    {
+        _timeMeter.StartTimeMeter();
+        _levelManager.SpawnMore(false);
+    }
 
-      return false;
-   }
+    public void NotifyTimesUp()
+    {
+        ++_xpPoints;
+        if (xpPointsLabel != null)
+        {
+            xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
+        }
 
-   public int GetXpPoints() => _xpPoints;
-   public void CameraShake(float time) => cameraShake.ShakeCameraFor(time);
-   public void CameraShake(float time, float amplitude, float frequency, Vector3 pivot) => cameraShake.ShakeCameraFor(time, amplitude, frequency, pivot);
+        StartLevel();
+    }
+
+    public void NotifyPlayerIsDead()
+    {
+        _timeMeter.StopTimeMeter();
+    }
+
+    public bool TryToSpendXpPoints(int cost)
+    {
+        if (infiniteXp)
+        {
+            return true;
+        }
+        
+        if (_xpPoints - cost >= 0)
+        {
+            _xpPoints -= cost;
+            xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1.0f;
+    }
+
+    public void OpenUpdateMenu()
+    {
+        upgradePanel.gameObject.SetActive(true);
+    }
+
+    public int GetXpPoints() => _xpPoints;
+    public void CameraShake(float time) => cameraShake.ShakeCameraFor(time);
+
+    public void CameraShake(float time, float amplitude, float frequency, Vector3 pivot) =>
+        cameraShake.ShakeCameraFor(time, amplitude, frequency, pivot);
+
+    public PlayerUpgradeManager UpgradeManager() => playerUpgrade;
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
@@ -14,6 +15,16 @@ public class ShieldBehavior : MonoBehaviour
     
     private bool _shieldIsOn;
     private int _shieldCurrentStrength;
+    
+    [SerializeField]
+    private bool rechargeable;
+    [SerializeField]
+    private float cooldown;
+
+    private void Awake()
+    {
+        _shieldCurrentStrength = shieldStrength;
+    }
 
     public void TurnShieldOn()
     {
@@ -30,7 +41,16 @@ public class ShieldBehavior : MonoBehaviour
     {
         _shieldIsOn = false;
         transform.localScale = Vector3.zero;
-        gameObject.SetActive(false);
+        if (rechargeable)
+        {
+            StartCoroutine(ShieldCooldown());
+        }
+    }
+
+    private IEnumerator ShieldCooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        TurnShieldOn();
     }
     
     private void TakeDamage()
@@ -41,7 +61,7 @@ public class ShieldBehavior : MonoBehaviour
             TurnShieldOff();
         }
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         ResolveCollision(other.gameObject);
@@ -54,10 +74,19 @@ public class ShieldBehavior : MonoBehaviour
     
     private void ResolveCollision(GameObject other)
     {
+        if (!_shieldIsOn)
+        {
+            return;
+        }
+        
         if (other.CompareTag("PlayerBullet"))
         {
             TakeDamage();
             LeanPool.Despawn(other);
         }
     }
+
+    public void IncreaseShieldStrenght(int increment) => shieldStrength += increment;
+    public void ReduceShieldCoolddown(float decrement) => cooldown -= decrement;
+
 }

@@ -31,6 +31,11 @@ public class BulletBehavior : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
     }
 
+    public void SetShootForce(float newShootForce)
+    {
+        shootForce = newShootForce;
+    }
+
     private void Impulse()
     {
         _rigidbody.velocity = direction * shootForce;

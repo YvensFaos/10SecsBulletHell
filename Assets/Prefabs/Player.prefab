@@ -14759,14 +14759,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  bulletInitialDamage: 1
   velocity: 0.02
   defaultBullet: {fileID: 806455430671153244, guid: 7881000f8964d4f5abadc42e7c008ec3, type: 3}
   gunPlacement:
   - {fileID: 9172657544697423715}
   attackScript: {fileID: 0}
   customMechanicScripts: []
+  shieldBehavior: {fileID: 0}
   damageParticles: {fileID: 2580866521290037538}
   destructionParticles: {fileID: 1794973432}
+  playerSpriteObject: {fileID: 6109492716578502071}
   spriteRenderer: {fileID: 579544697}
 --- !u!1 &6157670051553406212
 GameObject:

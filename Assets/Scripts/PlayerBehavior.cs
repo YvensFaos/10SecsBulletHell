@@ -28,6 +28,12 @@ public class PlayerBehavior : MonoBehaviour
     [Header("Player Controllers")] 
     [SerializeField] private ControlShaderGraphMaterial spriteRenderer;
     
+    [Header("Player Sounds")] 
+    [SerializeField] private AudioSource attackSound;
+    [SerializeField] private AudioSource hitSound;
+    [SerializeField] private AudioSource destructionSound;
+    [SerializeField] private AudioSource menuSound;
+    
     private Rigidbody _rigidbody;
     private bool _controllable;
     
@@ -77,6 +83,7 @@ public class PlayerBehavior : MonoBehaviour
                 var instance = GameLogic.GetInstance();
                 instance.PauseGame();
                 instance.OpenUpdateMenu();
+                menuSound.Play();
             }
 
             _rigidbody.velocity = Vector3.zero;
@@ -97,6 +104,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity, GameLogic.GetInstance().PlayerBulletsTransform());
             bullet.SetShootForce(_bulletSpeed);
+            attackSound.Play();
         });
     }
 
@@ -116,6 +124,7 @@ public class PlayerBehavior : MonoBehaviour
             spriteRenderer.AnimateMaterialValue("AlphaFactor", 0.0f, 0.4f);
             destructionParticles.Play();
             _controllable = false;
+            destructionSound.Play();
         }
         else
         {
@@ -125,6 +134,7 @@ public class PlayerBehavior : MonoBehaviour
                 shieldBehavior.gameObject.SetActive(false);
             }
             damageParticles.Play();
+            hitSound.Play();
         }
     }
 

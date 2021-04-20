@@ -101,6 +101,7 @@
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="SpawnEnemiesSO.cs" t="Include" />
           <e p="SpawnInfo.cs" t="Include" />
+          <e p="SpinningMotion.cs" t="Include" />
           <e p="TimeMeter.cs" t="Include" />
           <e p="UpgradeButtonLogic.cs" t="Include" />
           <e p="UpgradeInfo.cs" t="Include" />

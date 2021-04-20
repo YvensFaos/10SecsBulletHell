@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CustomMechanicScript : MonoBehaviour
 {
-    public void PerformCustomMechanic()
-    {
-        
-    }
+    public virtual void PerformCustomMechanic(DefaultEnemyScript enemy)
+    { }
 }

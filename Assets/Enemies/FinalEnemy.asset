@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc20b4e068334850bbe2fdf7f4fe30bf, type: 3}
-  m_Name: EasySpawn00
+  m_Script: {fileID: 11500000, guid: 2a789f2439664cf1b73c11edbca04473, type: 3}
+  m_Name: FinalEnemy
   m_EditorClassIdentifier: 
-  enemies:
-  - enemy: {fileID: 5195701629541926684, guid: 58701cc82f3f140d09828b0cfca26a23, type: 3}
-    minAmount: 1
-    maxAmount: 0
-    randomize: 0
-  enemyPositionPrefab: {fileID: 0}
+  priority:
+    aggresivity: 70
+    defensive: 20
+    moving: 30
+    waiting: 0
+    customMechanic: 0
+  alwaysUseCustomMechanic: 0

@@ -14,13 +14,13 @@ public class DefaultEnemyScript : MonoBehaviour
 {
     [Header("Enemy Info")] [SerializeField]
     private int health = 3;
+
     private int _currentHealth;
 
     [SerializeField] private float actTimer = 1.0f;
     private int _movementDirection;
-    
-    [Header("Enemy Configuration")] 
-    [SerializeField]
+
+    [Header("Enemy Configuration")] [SerializeField]
     private AnimationCurve movementCurve;
 
     [SerializeField] private float movementIntensity;
@@ -41,16 +41,18 @@ public class DefaultEnemyScript : MonoBehaviour
 
     [Header("Enemy Priorities")] [SerializeField]
     private EnemyPrioritySO priorities;
-    
-    [Header("Enemy Particles")]
-    [SerializeField] private ParticleSystem damageParticles;
+
+    [Header("Enemy Particles")] [SerializeField]
+    private ParticleSystem damageParticles;
+
     [SerializeField] private ParticleSystem destructionParticles;
 
-    [Header("Enemy Sounds")] 
-    [SerializeField] private AudioSource attackSound;
+    [Header("Enemy Sounds")] [SerializeField]
+    private AudioSource attackSound;
+
     [SerializeField] private AudioSource hitSound;
     [SerializeField] private AudioSource destructionSound;
-    
+
 
     /// <summary>
     /// Used to calculated the added priority values and facilitate the querying for actions.
@@ -70,8 +72,9 @@ public class DefaultEnemyScript : MonoBehaviour
         {
             shieldBehavior.gameObject.SetActive(false);
         }
+
         _movementDirection = 1;
-        
+
         CalculatePrioritySum();
         var levelManager = GameLogic.GetInstance().Level;
         _minPosition = levelManager.MinPosition;
@@ -97,7 +100,7 @@ public class DefaultEnemyScript : MonoBehaviour
         {
             _movementDirection = -1;
         }
-        
+
         StartCoroutine(_logicCoroutine);
     }
 
@@ -105,7 +108,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         void ExecuteAllCustomScripts()
         {
-            customMechanicScripts.ForEach(customMechanicScript => customMechanicScript.PerformCustomMechanic());
+            customMechanicScripts.ForEach(customMechanicScript => customMechanicScript.PerformCustomMechanic(this));
         }
 
         while (_currentHealth > 0)
@@ -114,54 +117,55 @@ public class DefaultEnemyScript : MonoBehaviour
             {
                 ExecuteAllCustomScripts();
             }
-            else
+
+            var action = GetAction();
+            switch (action)
             {
-                var action = GetAction();
-                switch (action)
-                {
-                    case EnemyPriorityEnum.Attack:
-                        if (attackScript != null)
+                case EnemyPriorityEnum.Attack:
+                    if (attackScript != null)
+                    {
+                        attackScript.PerformAttack();
+                    }
+                    else
+                    {
+                        PerformSimpleAttack();
+                    }
+
+                    break;
+                case EnemyPriorityEnum.Defend:
+                    if (_hasShield)
+                    {
+                        shieldBehavior.gameObject.SetActive(true);
+                        shieldBehavior.TurnShieldOn();
+                    }
+
+                    break;
+                case EnemyPriorityEnum.Moving:
+                    var position = transform.position;
+                    _internalCurvePosition += movementIntensity;
+                    var newPosition = _movementDirection * movementCurve.Evaluate(_internalCurvePosition);
+                    var moveTo = new Vector3(position.x + newPosition, position.y - movementOnY);
+                    moveTo.x = Mathf.Clamp(moveTo.x, _minPosition.x, _maxPosition.x);
+                    _internalTween = transform.DOMove(moveTo, actTimer).OnComplete(() =>
+                    {
+                        if (transform.position.y < GameLogic.GetInstance().Level.LimitY)
                         {
-                            attackScript.PerformAttack();
+                            Die();
                         }
-                        else
-                        {
-                            PerformSimpleAttack();
-                        }
-                        break;
-                    case EnemyPriorityEnum.Defend:
-                        if (_hasShield)
-                        {
-                            shieldBehavior.gameObject.SetActive(true);
-                            shieldBehavior.TurnShieldOn();
-                        }
-                        break;
-                    case EnemyPriorityEnum.Moving:
-                        var position = transform.position;
-                        _internalCurvePosition += movementIntensity;
-                        var newPosition = _movementDirection * movementCurve.Evaluate(_internalCurvePosition);
-                        var moveTo = new Vector3(position.x + newPosition, position.y - movementOnY);
-                        moveTo.x = Mathf.Clamp(moveTo.x, _minPosition.x, _maxPosition.x);
-                        _internalTween = transform.DOMove(moveTo, actTimer).OnComplete(() =>
-                        {
-                            if (transform.position.y < GameLogic.GetInstance().Level.LimitY)
-                            {
-                                Die();
-                            }
-                        });
-                        break;
-                    case EnemyPriorityEnum.Waiting:
-                        // Does nothing
-                        break;
-                    case EnemyPriorityEnum.Custom:
-                        if (!priorities.alwaysUseCustomMechanic)
-                        {
-                            ExecuteAllCustomScripts();    
-                        }
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                    });
+                    break;
+                case EnemyPriorityEnum.Waiting:
+                    // Does nothing
+                    break;
+                case EnemyPriorityEnum.Custom:
+                    if (!priorities.alwaysUseCustomMechanic)
+                    {
+                        ExecuteAllCustomScripts();
+                    }
+
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
 
             yield return new WaitForSeconds(actTimer);
@@ -171,7 +175,7 @@ public class DefaultEnemyScript : MonoBehaviour
     /// <summary>
     /// Invoked when there is not specific AttackScript
     /// </summary>
-    private void PerformSimpleAttack()
+    public void PerformSimpleAttack()
     {
         gunPlacements.ForEach(placement =>
         {
@@ -189,7 +193,8 @@ public class DefaultEnemyScript : MonoBehaviour
             _currentHealth -= _player.GetPlayerBulletDamage();
             if (damageParticles != null)
             {
-                var particles = LeanPool.Spawn(damageParticles, transform.position, Quaternion.identity, GameLogic.GetInstance().DamageParticlesTransform());
+                var particles = LeanPool.Spawn(damageParticles, transform.position, Quaternion.identity,
+                    GameLogic.GetInstance().DamageParticlesTransform());
                 particles.Play();
                 LeanPool.Despawn(particles, 2.0f);
 
@@ -210,8 +215,9 @@ public class DefaultEnemyScript : MonoBehaviour
         StopCoroutine(_logicCoroutine);
         destructionSound.Play();
         LeanPool.Despawn(this, 0.8f);
-        
-        var particles = LeanPool.Spawn(destructionParticles, transform.position, Quaternion.identity, GameLogic.GetInstance().DestructionParticlesTransform());
+
+        var particles = LeanPool.Spawn(destructionParticles, transform.position, Quaternion.identity,
+            GameLogic.GetInstance().DestructionParticlesTransform());
         particles.Play();
         LeanPool.Despawn(particles, 2.0f);
 

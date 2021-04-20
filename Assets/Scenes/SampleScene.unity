@@ -2598,6 +2598,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 078e0c2f96e23478f8a068eeb94f780d, type: 2}
   - {fileID: 11400000, guid: 1a521b5eb34804e188bb72725dd7bec2, type: 2}
   - {fileID: 11400000, guid: d00aee325e11b40b29fc8a9ed2fc47ad, type: 2}
+  - {fileID: 11400000, guid: a988928804b60404eb30a53b892b0d67, type: 2}
+  - {fileID: 11400000, guid: ae20eb0892a0442bdb200535af4d5db1, type: 2}
+  - {fileID: 11400000, guid: 35e67e9f940ed49f3a47361f02ae9161, type: 2}
+  - {fileID: 11400000, guid: cfbd56a1a8ffd4d6382238be30379027, type: 2}
+  - {fileID: 11400000, guid: 92f0ef34dbc7a4f9d877fee468747a25, type: 2}
+  - {fileID: 11400000, guid: b5d9fc3aa9d01496c8345c0bdbff159b, type: 2}
   minTransform: {fileID: 1981238741}
   maxTransform: {fileID: 1142740547}
   limitTransform: {fileID: 70522853}

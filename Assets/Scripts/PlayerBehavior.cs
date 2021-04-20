@@ -17,7 +17,6 @@ public class PlayerBehavior : MonoBehaviour
 
     [SerializeField] private AttackScript attackScript;
     private bool _hasAttackScript;
-    [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
     [SerializeField] ShieldBehavior shieldBehavior;
 
     [Header("Player Particles")]
@@ -75,7 +74,6 @@ public class PlayerBehavior : MonoBehaviour
                 {
                     PerformSimpleAttack();
                 }
-                ExecuteAllCustomScripts();
             }
 
             if (Input.GetButtonUp("Fire2"))
@@ -89,12 +87,7 @@ public class PlayerBehavior : MonoBehaviour
             _rigidbody.velocity = Vector3.zero;
         }
     }
-    
-    private void ExecuteAllCustomScripts()
-    {
-        customMechanicScripts.ForEach(customMechanicScript => customMechanicScript.PerformCustomMechanic());
-    }
-    
+
     /// <summary>
     /// Invoked when there is not specific AttackScript
     /// </summary>
@@ -178,6 +171,10 @@ public class PlayerBehavior : MonoBehaviour
         spriteRenderer.SetMaterialValue("AlphaFactor", 0.0f);
         spriteRenderer.AnimateMaterialValue("AlphaFactor", 1.0f, 0.4f);
         _controllable = true;
+        if (HasShieldUnlocked())
+        {
+            shieldBehavior.TurnShieldOn();
+        }
     }
     
     //Unlock Upgrades 

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc20b4e068334850bbe2fdf7f4fe30bf, type: 3}
-  m_Name: EasySpawn00
+  m_Name: EasySpawn10
   m_EditorClassIdentifier: 
   enemies:
-  - enemy: {fileID: 5195701629541926684, guid: 58701cc82f3f140d09828b0cfca26a23, type: 3}
-    minAmount: 1
-    maxAmount: 0
-    randomize: 0
+  - enemy: {fileID: 5934615072090512061, guid: cfdfaa2acf2984b068317685d568048d, type: 3}
+    minAmount: 2
+    maxAmount: 4
+    randomize: 1
   enemyPositionPrefab: {fileID: 0}

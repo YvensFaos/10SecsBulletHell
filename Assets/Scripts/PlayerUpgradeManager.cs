@@ -87,7 +87,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     private void UnlockNewUpgrades(string[] unlock)
     {
-        if (unlock.Length > 0)
+        if (unlock != null && unlock.Length > 0)
         {
             foreach (string unlockUpgrade in unlock)
             {

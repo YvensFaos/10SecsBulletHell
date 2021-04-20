@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68
+  m_fontSize: 68.05
   m_fontSizeBase: 65.98
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   playerUpgrade: {fileID: 693563807}
   upgradePanel: {fileID: 449836000}
   gameOverScreen: {fileID: 191233515}
-  infiniteXp: 0
+  infiniteXp: 1
 --- !u!4 &693563805
 Transform:
   m_ObjectHideFlags: 0
@@ -4398,7 +4398,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5623608, y: 1}
+    m_SensorSize: {x: 0.5619048, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6336,7 +6336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -199.99995}
+  m_AnchoredPosition: {x: 0, y: -199.99997}
   m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081364462

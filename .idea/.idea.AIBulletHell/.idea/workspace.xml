@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +70,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradeInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" />
       </list>
     </option>
   </component>

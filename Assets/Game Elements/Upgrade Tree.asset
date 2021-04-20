@@ -32,10 +32,7 @@ MonoBehaviour:
     type: 4
     increment: 0
     unlocks:
-    - 
-    - 
-    - 
-    - 
+    - 4
   - requirements: 1
     id: 4
     cost: 4

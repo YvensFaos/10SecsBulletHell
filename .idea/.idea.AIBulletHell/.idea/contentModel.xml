@@ -86,6 +86,7 @@
           <e p="EnemyPriorityEnum.cs" t="Include" />
           <e p="EnemyPrioritySO.cs" t="Include" />
           <e p="GameLogic.cs" t="Include" />
+          <e p="GunPosition.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="PlayerBehavior.cs" t="Include" />
           <e p="PlayerUpgradeManager.cs" t="Include" />

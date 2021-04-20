@@ -7,14 +7,13 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     [Header("Player Info")] 
-    [SerializeField]
-    private int health = 1;
+    [SerializeField] private int health = 1;
     [SerializeField] private int bulletInitialDamage = 1;
     [SerializeField] private float velocity = 1;
 
     [Header("Player Configuration")]
     [SerializeField] private BulletBehavior defaultBullet;
-    [SerializeField] private List<Transform> gunPlacement;
+    [SerializeField] private List<GunPosition> gunPlacements;
 
     [SerializeField] private AttackScript attackScript;
     private bool _hasAttackScript;
@@ -41,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
     private int _currentHealth;
     private int _bulletDamage = 1;
     private float _bulletSpeed = 10;
-    // private int _extraGuns; //TO DO
+    private int _extraGuns;
     private bool _shieldUnlocked;
     private float _movementSpeed;
 
@@ -53,6 +52,7 @@ public class PlayerBehavior : MonoBehaviour
         _currentHealth = health;
         _movementSpeed = velocity;
         _bulletDamage = bulletInitialDamage;
+        _extraGuns = 0;
     }
 
     private void Update()
@@ -100,11 +100,16 @@ public class PlayerBehavior : MonoBehaviour
     /// </summary>
     private void PerformSimpleAttack()
     {
-        gunPlacement.ForEach(gunPlacementTransform =>
+        gunPlacements.ForEach(placement =>
         {
-            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity, GameLogic.GetInstance().PlayerBulletsTransform());
-            bullet.SetShootForce(_bulletSpeed);
-            attackSound.Play();
+            if (placement.Available())
+            {
+                var bullet = LeanPool.Spawn(defaultBullet, placement.transform.position, Quaternion.identity,
+                    GameLogic.GetInstance().PlayerBulletsTransform());
+                bullet.SetShootForce(_bulletSpeed);
+                bullet.SetDirection(placement.GetDirection());
+                attackSound.Play();
+            }
         });
     }
 
@@ -192,6 +197,14 @@ public class PlayerBehavior : MonoBehaviour
         if (shieldBehavior != null)
         {
             shieldBehavior.gameObject.SetActive(true);    
+        }
+    }
+
+    public void UnlockNewGun()
+    {
+        if (++_extraGuns < gunPlacements.Count)
+        {
+            gunPlacements[_extraGuns].TurnOn();
         }
     }
 

@@ -52,7 +52,7 @@ public class PlayerUpgradeManager : MonoBehaviour
                 player.IncreaseBulletDamage((int) upgradeInfo.increment);
                 break;
             case UpgradeTypeEnum.EXTRA_GUN:
-                // TODO
+                player.UnlockNewGun();
                 break;
             case UpgradeTypeEnum.SHIELD_UNLOCK:
                 player.UnlockShield();

@@ -45,3 +45,30 @@ MonoBehaviour:
     type: 7
     increment: 0.02
     unlocks: []
+  - requirements: 0
+    id: 6
+    cost: 5
+    type: 3
+    increment: 1
+    unlocks:
+    - 7
+  - requirements: 1
+    id: 7
+    cost: 6
+    type: 3
+    increment: 1
+    unlocks:
+    - 8
+  - requirements: 1
+    id: 8
+    cost: 7
+    type: 3
+    increment: 1
+    unlocks:
+    - 9
+  - requirements: 1
+    id: 9
+    cost: 8
+    type: 3
+    increment: 1
+    unlocks: []

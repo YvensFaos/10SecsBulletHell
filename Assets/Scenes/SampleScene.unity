@@ -8723,6 +8723,18 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.31
       objectReference: {fileID: 0}
+    - target: {fileID: 5877832843287607676, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877832843287607676, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004918522742265803, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6109492716592283681, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8775,5 +8787,84 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.16
       objectReference: {fileID: 0}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.data[0]
+      value: 
+      objectReference: {fileID: 6109492717486906157}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.data[1]
+      value: 
+      objectReference: {fileID: 6109492717486906161}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.data[2]
+      value: 
+      objectReference: {fileID: 6109492717486906160}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.data[3]
+      value: 
+      objectReference: {fileID: 6109492717486906159}
+    - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: gunPlacements.Array.data[4]
+      value: 
+      objectReference: {fileID: 6109492717486906158}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+--- !u!114 &6109492717486906157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6004918522742265803, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+  m_PrefabInstance: {fileID: 6109492717486906156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656f56ac95bc43ab9dfdec16681547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6109492717486906158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 932415150068264664, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+  m_PrefabInstance: {fileID: 6109492717486906156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656f56ac95bc43ab9dfdec16681547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6109492717486906159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 245547236104666241, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+  m_PrefabInstance: {fileID: 6109492717486906156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656f56ac95bc43ab9dfdec16681547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6109492717486906160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6413831073561653707, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+  m_PrefabInstance: {fileID: 6109492717486906156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656f56ac95bc43ab9dfdec16681547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6109492717486906161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8982989970467925590, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+  m_PrefabInstance: {fileID: 6109492717486906156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656f56ac95bc43ab9dfdec16681547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -30,7 +30,7 @@ public class DefaultEnemyScript : MonoBehaviour
     private Vector3 _maxPosition;
 
     [SerializeField] private BulletBehavior defaultBullet;
-    [SerializeField] private List<Transform> gunPlacement;
+    [SerializeField] private List<GunPosition> gunPlacements;
 
     [SerializeField] private AttackScript attackScript;
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
@@ -173,9 +173,11 @@ public class DefaultEnemyScript : MonoBehaviour
     /// </summary>
     private void PerformSimpleAttack()
     {
-        gunPlacement.ForEach(gunPlacementTransform =>
+        gunPlacements.ForEach(placement =>
         {
-            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity, GameLogic.GetInstance().EnemyBulletsTransform());
+            var bullet = LeanPool.Spawn(defaultBullet, placement.transform.position, Quaternion.identity,
+                GameLogic.GetInstance().PlayerBulletsTransform());
+            bullet.SetDirection(placement.GetDirection());
             attackSound.Play();
         });
     }

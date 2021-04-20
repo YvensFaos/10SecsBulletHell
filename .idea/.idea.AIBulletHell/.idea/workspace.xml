@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game Elements/Upgrade Tree.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game Elements/Upgrade Tree.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +71,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GunPosition.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
       </list>
     </option>
   </component>

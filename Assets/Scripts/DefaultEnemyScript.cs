@@ -37,12 +37,20 @@ public class DefaultEnemyScript : MonoBehaviour
     [SerializeField] private ShieldBehavior shieldBehavior;
 
     private bool _hasShield;
+    private bool _dead;
 
     [Header("Enemy Priorities")] [SerializeField]
     private EnemyPrioritySO priorities;
     
-    [Header("Player Particles")]
+    [Header("Enemy Particles")]
     [SerializeField] private ParticleSystem damageParticles;
+    [SerializeField] private ParticleSystem destructionParticles;
+
+    [Header("Enemy Sounds")] 
+    [SerializeField] private AudioSource attackSound;
+    [SerializeField] private AudioSource hitSound;
+    [SerializeField] private AudioSource destructionSound;
+    
 
     /// <summary>
     /// Used to calculated the added priority values and facilitate the querying for actions.
@@ -69,6 +77,11 @@ public class DefaultEnemyScript : MonoBehaviour
         _minPosition = levelManager.MinPosition;
         _maxPosition = levelManager.MaxPosition;
         Initiate();
+    }
+
+    private void OnEnable()
+    {
+        _dead = false;
     }
 
     /// <summary>
@@ -162,7 +175,8 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         gunPlacement.ForEach(gunPlacementTransform =>
         {
-            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity, GameLogic.GetInstance().EnemyBulletsTransform());
+            attackSound.Play();
         });
     }
 
@@ -173,10 +187,12 @@ public class DefaultEnemyScript : MonoBehaviour
             _currentHealth -= _player.GetPlayerBulletDamage();
             if (damageParticles != null)
             {
-                var particles = LeanPool.Spawn(damageParticles, transform.position, Quaternion.identity);
+                var particles = LeanPool.Spawn(damageParticles, transform.position, Quaternion.identity, GameLogic.GetInstance().DamageParticlesTransform());
                 particles.Play();
+                LeanPool.Despawn(particles, 2.0f);
 
                 GameLogic.GetInstance().CameraShake(0.4f, 1.0f, 1.0f, Vector3.zero);
+                hitSound.Play();
             }
 
             if (_currentHealth <= 0)
@@ -190,7 +206,14 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         _internalTween.Kill();
         StopCoroutine(_logicCoroutine);
-        LeanPool.Despawn(this);
+        destructionSound.Play();
+        LeanPool.Despawn(this, 0.8f);
+        
+        var particles = LeanPool.Spawn(destructionParticles, transform.position, Quaternion.identity, GameLogic.GetInstance().DestructionParticlesTransform());
+        particles.Play();
+        LeanPool.Despawn(particles, 2.0f);
+
+        _dead = true;
     }
 
     private EnemyPriorityEnum GetAction()
@@ -251,7 +274,7 @@ public class DefaultEnemyScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerBullet"))
+        if (!_dead && other.gameObject.CompareTag("PlayerBullet"))
         {
             TakeDamage();
         }

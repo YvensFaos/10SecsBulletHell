@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
 
          for (int i = 0; i < count; i++)
          {
-            Vector3 position = new Vector3(Random.Range(_minPosition.x, _maxPosition.x), Random.Range(_minPosition.y, _maxPosition.y), Random.Range(_minPosition.z, _maxPosition.z));
+            var position = new Vector3(Random.Range(_minPosition.x, _maxPosition.x), Random.Range(_minPosition.y, _maxPosition.y), Random.Range(_minPosition.z, _maxPosition.z));
             var enemy = LeanPool.Spawn(spawnInfo.enemy, position, Quaternion.identity);
             enemy.Initiate(position.x < _middlePointX);            
          }

@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/BiggerEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/BiggerEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/DamageParticleSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/DamageParticleSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/DoubleEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/DoubleEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/PeacefulEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/PeacefulEnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +82,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BulletBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
       </list>
     </option>
   </component>

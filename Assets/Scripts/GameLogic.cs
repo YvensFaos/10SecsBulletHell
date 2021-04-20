@@ -18,7 +18,8 @@ public class GameLogic : MonoBehaviour
     private LevelManager _levelManager;
     public LevelManager Level => _levelManager;
 
-    [Header("Parameters")] [SerializeField]
+    [Header("Parameters")] 
+    [SerializeField]
     private float rebirthCost = 0.8f;
 
     private int _xpPerRound = 1;
@@ -31,7 +32,14 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private UpgradePanelController upgradePanel;
     [SerializeField] private GameObject gameOverScreen;
 
-    [Header("Cheats")] [SerializeField] private bool infiniteXp;
+    [Header("LeanPool Prefabs")] 
+    [SerializeField] private Transform playerBulletsTransform;
+    [SerializeField] private Transform enemyBulletsTransform;
+    [SerializeField] private Transform damageParticlesTransform;
+    [SerializeField] private Transform destructionParticlesTransform;
+
+    [Header("Cheats")] 
+    [SerializeField] private bool infiniteXp;
 
     private void Awake()
     {
@@ -159,4 +167,9 @@ public class GameLogic : MonoBehaviour
         cameraShake.ShakeCameraFor(time, amplitude, frequency, pivot);
 
     public PlayerUpgradeManager UpgradeManager() => playerUpgrade;
+    
+    public Transform PlayerBulletsTransform() => playerBulletsTransform;
+    public Transform EnemyBulletsTransform() => enemyBulletsTransform;
+    public Transform DamageParticlesTransform() => damageParticlesTransform;
+    public Transform DestructionParticlesTransform() => destructionParticlesTransform;
 }

@@ -95,7 +95,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         gunPlacement.ForEach(gunPlacementTransform =>
         {
-            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity, GameLogic.GetInstance().PlayerBulletsTransform());
             bullet.SetShootForce(_bulletSpeed);
         });
     }

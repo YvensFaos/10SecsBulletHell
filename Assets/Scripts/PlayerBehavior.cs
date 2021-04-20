@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Lean.Pool;
 using UnityEngine;
@@ -119,6 +120,10 @@ public class PlayerBehavior : MonoBehaviour
         else
         {
             GameLogic.GetInstance().CameraShake(0.5f);
+            if (HasShieldUnlocked())
+            {
+                shieldBehavior.gameObject.SetActive(false);
+            }
             damageParticles.Play();
         }
     }
@@ -132,11 +137,15 @@ public class PlayerBehavior : MonoBehaviour
         {
             if (IsAlive())
             {
-                TakeDamage();  
-                if (isEnemyBullet)
+                if(!IsShieldActive())
                 {
-                    LeanPool.Despawn(other.gameObject);
+                    TakeDamage();
+                    if (isEnemyBullet)
+                    {
+                        LeanPool.Despawn(other.gameObject);
+                    }
                 }
+                
             }
         }
     }
@@ -177,5 +186,8 @@ public class PlayerBehavior : MonoBehaviour
     }
 
     public bool HasShieldUnlocked() => _shieldUnlocked && shieldBehavior != null;
+
+    private bool IsShieldActive() => HasShieldUnlocked() && shieldBehavior.IsShieldOn();
+    
     public ShieldBehavior GetShield() => shieldBehavior;
 }

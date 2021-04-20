@@ -58,7 +58,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void ResolveCollision(GameObject other)
     {
-        if (other.CompareTag("BoderCollider"))
+        if (other.CompareTag("BorderCollider"))
         {
             LeanPool.Despawn(this);
         }

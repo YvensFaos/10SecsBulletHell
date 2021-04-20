@@ -6,24 +6,25 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ShieldBehavior : MonoBehaviour
 {
-    [SerializeField]
-    private Vector3 regularShieldSide;
-    [SerializeField]
-    private float shieldAnimationTimer;
-    [SerializeField] 
-    private int shieldStrength;
-    
+    [SerializeField] private Vector3 regularShieldSize;
+    [SerializeField] private float shieldAnimationTimer;
+    [SerializeField] private int shieldStrength;
+    [SerializeField] private bool playerShield;
+
     private bool _shieldIsOn;
     private int _shieldCurrentStrength;
-    
-    [SerializeField]
-    private bool rechargeable;
-    [SerializeField]
-    private float cooldown;
+
+    [SerializeField] private bool rechargeable;
+    [SerializeField] private float cooldown;
 
     private void Awake()
     {
         _shieldCurrentStrength = shieldStrength;
+    }
+    
+    private void OnEnable()
+    {
+        TurnShieldOn();
     }
 
     public void TurnShieldOn()
@@ -33,10 +34,10 @@ public class ShieldBehavior : MonoBehaviour
             _shieldCurrentStrength = shieldStrength;
             _shieldIsOn = true;
             transform.localScale = Vector3.zero;
-            transform.DOScale(regularShieldSide, shieldAnimationTimer);
+            transform.DOScale(regularShieldSize, shieldAnimationTimer);
         }
     }
-    
+
     private void TurnShieldOff()
     {
         _shieldIsOn = false;
@@ -52,16 +53,17 @@ public class ShieldBehavior : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         TurnShieldOn();
     }
-    
-    private void TakeDamage()
+
+    public void TakeDamage(bool fromEnemy = false)
     {
-        _shieldCurrentStrength -= GameLogic.GetInstance().Player.GetPlayerBulletDamage();
+        var damage = (fromEnemy) ? 1 : GameLogic.GetInstance().Player.GetPlayerBulletDamage();
+        _shieldCurrentStrength -= damage;
         if (_shieldCurrentStrength <= 0)
         {
             TurnShieldOff();
         }
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         ResolveCollision(other.gameObject);
@@ -71,22 +73,25 @@ public class ShieldBehavior : MonoBehaviour
     {
         ResolveCollision(other.gameObject);
     }
-    
+
     private void ResolveCollision(GameObject other)
     {
         if (!_shieldIsOn)
         {
             return;
         }
-        
-        if (other.CompareTag("PlayerBullet"))
+
+        bool fromEnemy = other.CompareTag("EnemyBullet");
+        bool damage = (playerShield) ? fromEnemy : other.CompareTag("PlayerBullet");
+        if (damage)
         {
-            TakeDamage();
             LeanPool.Despawn(other);
+            TakeDamage(fromEnemy);
         }
     }
 
     public void IncreaseShieldStrenght(int increment) => shieldStrength += increment;
     public void ReduceShieldCoolddown(float decrement) => cooldown -= decrement;
 
+    public bool IsShieldOn() => _shieldIsOn;
 }

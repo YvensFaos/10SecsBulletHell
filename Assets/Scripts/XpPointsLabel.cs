@@ -11,8 +11,8 @@ public class XpPointsLabel : MonoBehaviour
    [SerializeField]
    private string defaultText;
    
-   private Vector3 _scaleUp = new Vector3(1.5f, 1.4f, 1.0f);
-   private Vector3 _scaleNormal = new Vector3(1.0f, 1.0f, 1.0f);
+   private readonly Vector3 _scaleUp = new Vector3(1.5f, 1.4f, 1.0f);
+   private readonly Vector3 _scaleNormal = new Vector3(1.0f, 1.0f, 1.0f);
    
    private void Awake()
    {

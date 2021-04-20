@@ -162,7 +162,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         gunPlacement.ForEach(gunPlacementTransform =>
         {
-            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
         });
     }
 

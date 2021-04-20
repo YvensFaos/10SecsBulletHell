@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
       if (shouldProgress)
       {
          _spawnEnemiesIndex++;
-         _spawnEnemiesIndex = Mathf.Clamp(_spawnEnemiesIndex, 0, spawnEnemiesSOs.Count);
+         _spawnEnemiesIndex = Mathf.Clamp(_spawnEnemiesIndex, 0, spawnEnemiesSOs.Count - 1);
       }
 
       var spawnEnemy = spawnEnemiesSOs[_spawnEnemiesIndex];

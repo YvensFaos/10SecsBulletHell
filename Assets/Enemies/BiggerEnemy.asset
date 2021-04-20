@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BiggerEnemy
   m_EditorClassIdentifier: 
   priority:
-    aggresivity: 60
-    defensive: 220
+    aggresivity: 40
+    defensive: 40
     moving: 10
     waiting: 10
     customMechanic: 0

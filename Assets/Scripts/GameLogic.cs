@@ -119,11 +119,13 @@ public class GameLogic : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0.0f;
+        _player.AllowControl(false);
     }
 
     public void UnpauseGame()
     {
         Time.timeScale = 1.0f;
+        _player.AllowControl(true);
     }
 
     public void OpenUpdateMenu()
@@ -138,7 +140,7 @@ public class GameLogic : MonoBehaviour
 
     public void RebirthPlayer()
     {
-        _xpPoints = Mathf.FloorToInt(_xpPoints * rebirthCost);
+        _xpPoints = Mathf.FloorToInt(_xpPoints - (_xpPoints * rebirthCost));
         xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
         _player.RebirthPlayer();
         _timeMeter.StartTimeMeter();

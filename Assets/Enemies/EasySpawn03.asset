@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemy: {fileID: 2953178417664053586, guid: fc3bebececeb54c27b071bb673e8031c, type: 3}
-    minAmount: 5
-    maxAmount: 0
+    minAmount: 4
+    maxAmount: 6
     randomize: 0
   - enemy: {fileID: 3909520660711728059, guid: a8153f62cdd1447f492aaf9135484bdf, type: 3}
     minAmount: 1

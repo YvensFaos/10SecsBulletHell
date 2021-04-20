@@ -162,22 +162,27 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         gunPlacement.ForEach(gunPlacementTransform =>
         {
-            var bullet = LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
+            LeanPool.Spawn(defaultBullet, gunPlacementTransform.transform.position, Quaternion.identity);
         });
     }
 
     public void TakeDamage()
     {
-        _currentHealth -= _player.GetPlayerBulletDamage();
-        if (damageParticles != null)
+        if (!IsShieldActivate())
         {
-            damageParticles.Play();
-            GameLogic.GetInstance().CameraShake(0.4f, 1.0f, 1.0f, Vector3.zero);
-        }
-        
-        if (_currentHealth <= 0)
-        {
-            Die();
+            _currentHealth -= _player.GetPlayerBulletDamage();
+            if (damageParticles != null)
+            {
+                var particles = LeanPool.Spawn(damageParticles, transform.position, Quaternion.identity);
+                particles.Play();
+
+                GameLogic.GetInstance().CameraShake(0.4f, 1.0f, 1.0f, Vector3.zero);
+            }
+
+            if (_currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -251,4 +256,6 @@ public class DefaultEnemyScript : MonoBehaviour
             TakeDamage();
         }
     }
+
+    private bool IsShieldActivate() => _hasShield && shieldBehavior.IsShieldOn();
 }

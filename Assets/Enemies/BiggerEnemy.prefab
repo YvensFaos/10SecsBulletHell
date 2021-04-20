@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 1290392072}
   - component: {fileID: 1290392073}
   - component: {fileID: 1290392074}
+  - component: {fileID: 5911697898074889829}
   m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1290392072
 Transform:
   m_ObjectHideFlags: 0
@@ -97,6 +98,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5911697898074889829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290392071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cbc55e9374f41048e3e8317d8af869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularShieldSize: {x: 0.83236, y: 0.83236, z: 2.0809}
+  shieldAnimationTimer: 1
+  shieldStrength: 2
+  playerShield: 0
+  rechargeable: 0
+  cooldown: 0
 --- !u!1 &4880355025010124342
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +211,9 @@ MonoBehaviour:
   - {fileID: 8004714048646338302}
   attackScript: {fileID: 0}
   customMechanicScripts: []
-  shieldBehavior: {fileID: 0}
+  shieldBehavior: {fileID: 5911697898074889829}
   priorities: {fileID: 11400000, guid: 351aa2fdac0fc4d78b3fa710d7d107f0, type: 2}
+  damageParticles: {fileID: 4680342867768762590, guid: 5c8f83ed6b1324aa9a5dfab69c53354e, type: 3}
 --- !u!1 &4880355025377587852
 GameObject:
   m_ObjectHideFlags: 0

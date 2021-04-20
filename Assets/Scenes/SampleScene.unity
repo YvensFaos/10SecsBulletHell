@@ -2118,6 +2118,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae90c78a4d5d649ba8957e44d5c9f059, type: 2}
   - {fileID: 11400000, guid: 078e0c2f96e23478f8a068eeb94f780d, type: 2}
   - {fileID: 11400000, guid: 1a521b5eb34804e188bb72725dd7bec2, type: 2}
+  - {fileID: 11400000, guid: d00aee325e11b40b29fc8a9ed2fc47ad, type: 2}
   minTransform: {fileID: 1981238741}
   maxTransform: {fileID: 1142740547}
   limitTransform: {fileID: 70522853}

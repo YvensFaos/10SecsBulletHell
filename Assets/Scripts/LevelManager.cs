@@ -86,4 +86,6 @@ public class LevelManager : MonoBehaviour
          Gizmos.DrawLine(new Vector3(vecLine.x - 4.0f, vecLine.y, vecLine.z), new Vector3(vecLine.x + 4.0f, vecLine.y, vecLine.z));
       }
    }
+
+   public int GetCurrentLevel() => _spawnEnemiesIndex + 1;
 }

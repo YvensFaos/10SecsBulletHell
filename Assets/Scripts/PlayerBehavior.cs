@@ -190,4 +190,6 @@ public class PlayerBehavior : MonoBehaviour
     private bool IsShieldActive() => HasShieldUnlocked() && shieldBehavior.IsShieldOn();
     
     public ShieldBehavior GetShield() => shieldBehavior;
+
+    public int GetCurrentHealth() => _currentHealth;
 }

@@ -94,4 +94,6 @@ public class ShieldBehavior : MonoBehaviour
     public void ReduceShieldCoolddown(float decrement) => cooldown -= decrement;
 
     public bool IsShieldOn() => _shieldIsOn;
+
+    public int GetCurrentStrength() => _shieldCurrentStrength;
 }

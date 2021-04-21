@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpgradeInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DifficultyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReusableScripts/MixerAudioSlider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpgradeTreeSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomMechanicScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnEnemiesSO.cs" root0="FORCE_HIGHLIGHTING" />
@@ -32,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpinningMotion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ConfigPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Enemies/EasySpawn00.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPrioritySO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlShaderGraphMaterial.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,6 +84,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ReusableScripts/MixerAudioSlider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ConfigPanelController.cs" />
       </list>
     </option>
   </component>
@@ -128,9 +133,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1618938751805">
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1619002390797">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
-    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/1680.-845.1080.1895/0.25.1680.1025@0.25.1680.1025" timestamp="1618938751805" />
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/1680.-845.1080.1895/0.25.1680.1025@0.25.1680.1025" timestamp="1619002390797" />
   </component>
 </project>

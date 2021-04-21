@@ -78,6 +78,7 @@
         <e p="Scripts" t="Include">
           <e p="AttackScript.cs" t="Include" />
           <e p="BulletBehavior.cs" t="Include" />
+          <e p="ConfigPanelController.cs" t="Include" />
           <e p="ControlShaderGraphMaterial.cs" t="Include" />
           <e p="CounterBehavior.cs" t="Include" />
           <e p="CustomMechanicScript.cs" t="Include" />
@@ -93,8 +94,10 @@
           <e p="PlayerUpgradeManager.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
             <e p="ApplicationQuit.cs" t="Include" />
+            <e p="AudioSlider.cs" t="Include" />
             <e p="CameraShakeControl.cs" t="Include" />
             <e p="FPSCounter.cs" t="Include" />
+            <e p="MixerAudioSlider.cs" t="Include" />
             <e p="OpenURL.cs" t="Include" />
             <e p="RemoveMyRenderer.cs" t="Include" />
           </e>

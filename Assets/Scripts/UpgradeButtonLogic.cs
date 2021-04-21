@@ -9,7 +9,7 @@ public class UpgradeButtonLogic : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeText;
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private bool repeatable;
-
+    [SerializeField] private AudioSource errorAudio;
     private UpgradePanelController _controller;
     private int _currentCost;
 
@@ -28,13 +28,14 @@ public class UpgradeButtonLogic : MonoBehaviour
             if (!repeatable)
             {
                 _controller.RemoveMe(this);
-                Destroy(gameObject);    
+                _controller.ConfirmSound();
+                Destroy(gameObject);
             }
             GameLogic.GetInstance().UpgradeManager().Unlock(upgradeInfo);
         }
         else
         {
-            //Buzz sound
+            errorAudio.Play();
         }
     }
 

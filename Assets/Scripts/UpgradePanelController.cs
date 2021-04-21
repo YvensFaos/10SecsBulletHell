@@ -13,6 +13,9 @@ public class UpgradePanelController : MonoBehaviour
     [SerializeField]
     private Transform buttonsParent;
     
+    [SerializeField] 
+    private AudioSource confirmAudio;
+    
     private void Awake()
     {
         buttons = GetComponentsInChildren<UpgradeButtonLogic>(true).ToList();
@@ -50,5 +53,10 @@ public class UpgradePanelController : MonoBehaviour
     public void RefreshCostValues()
     {
         buttons.ForEach(logic => logic.UpgradeCost());
+    }
+
+    public void ConfirmSound()
+    {
+        confirmAudio.Play();
     }
 }

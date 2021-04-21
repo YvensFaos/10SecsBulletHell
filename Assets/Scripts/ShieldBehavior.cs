@@ -16,6 +16,7 @@ public class ShieldBehavior : MonoBehaviour
 
     [SerializeField] private bool rechargeable;
     [SerializeField] private float cooldown;
+    [SerializeField] private AudioSource shieldSound;
 
     private void Awake()
     {
@@ -58,6 +59,10 @@ public class ShieldBehavior : MonoBehaviour
     {
         var damage = (fromEnemy) ? 1 : GameLogic.GetInstance().Player.GetPlayerBulletDamage();
         _shieldCurrentStrength -= damage;
+        if (shieldSound != null)
+        {
+            shieldSound.Play();
+        }
         if (_shieldCurrentStrength <= 0)
         {
             TurnShieldOff();

@@ -47,15 +47,15 @@ public class TimeMeter : MonoBehaviour
     public void StopTimeMeter()
     {
         _timerTween.Kill();
-        hpText.text = "H: 0";
-        shieldText.text = "S: 0";
+        hpText.text = "0";
+        shieldText.text = "0";
         levelText.text = "L: 0";
     }
 
     public void Update()
     {
-        hpText.text = "H: " + _player.GetCurrentHealth();
-        shieldText.text = "S: " + _shieldBehavior.GetCurrentStrength();
+        hpText.text = _player.GetCurrentHealth().ToString();
+        shieldText.text = _shieldBehavior.GetCurrentStrength().ToString();
         levelText.text = "L: " + _levelManager.GetCurrentLevel();
     }
 }

@@ -69,14 +69,13 @@ public class GameLogic : MonoBehaviour
         {
             Debug.LogError("No Level Manager Found In The Scene.");
         }
+        
+        #if !UNITY_EDITOR
+            infiniteXp = false;
+        #endif
     }
 
     private int _xpPoints;
-
-    // private void Start()
-    // {
-    //    // StartLevel();
-    // }
 
     public void StartGame()
     {

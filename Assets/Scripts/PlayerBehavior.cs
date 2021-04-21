@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Lean.Pool;
 using UnityEngine;
@@ -14,9 +15,6 @@ public class PlayerBehavior : MonoBehaviour
     [Header("Player Configuration")]
     [SerializeField] private BulletBehavior defaultBullet;
     [SerializeField] private List<GunPosition> gunPlacements;
-
-    [SerializeField] private AttackScript attackScript;
-    private bool _hasAttackScript;
     [SerializeField] ShieldBehavior shieldBehavior;
 
     [Header("Player Particles")]
@@ -42,11 +40,14 @@ public class PlayerBehavior : MonoBehaviour
     private int _extraGuns;
     private bool _shieldUnlocked;
     private float _movementSpeed;
+    
+    //Ship cooldown
+    private bool _internalShotCooldownFlag;
+    private float _internalShotCooldown = 0.2f;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _hasAttackScript = attackScript != null;
 
         _currentHealth = health;
         _movementSpeed = velocity;
@@ -66,13 +67,10 @@ public class PlayerBehavior : MonoBehaviour
 
             if (Input.GetButtonUp("Fire1"))
             {
-                if (_hasAttackScript)
-                {
-                    attackScript.PerformAttack();
-                }
-                else
+                if (!_internalShotCooldownFlag)
                 {
                     PerformSimpleAttack();
+                    StartCoroutine(ShotCooldown());
                 }
             }
 
@@ -86,6 +84,13 @@ public class PlayerBehavior : MonoBehaviour
 
             _rigidbody.velocity = Vector3.zero;
         }
+    }
+
+    private IEnumerator ShotCooldown()
+    {
+        _internalShotCooldownFlag = true;
+        yield return new WaitForSeconds(_internalShotCooldown);
+        _internalShotCooldownFlag = false;
     }
 
     /// <summary>

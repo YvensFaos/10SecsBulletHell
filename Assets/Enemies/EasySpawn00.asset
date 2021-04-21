@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EasySpawn00
   m_EditorClassIdentifier: 
   enemies:
-  - enemy: {fileID: 5195701629541926684, guid: 58701cc82f3f140d09828b0cfca26a23, type: 3}
+  - enemy: {fileID: 3042603651878751502, guid: 1af47a453ee374a4f9c12cb214c0cea0, type: 3}
     minAmount: 1
     maxAmount: 0
     randomize: 0

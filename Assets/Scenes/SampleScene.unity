@@ -851,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &288883676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   enemyBulletsTransform: {fileID: 1670187663}
   damageParticlesTransform: {fileID: 207600915}
   destructionParticlesTransform: {fileID: 380919348}
-  infiniteXp: 0
+  infiniteXp: 1
 --- !u!4 &693563805
 Transform:
   m_ObjectHideFlags: 0
@@ -5441,7 +5441,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.56230366, y: 1}
+    m_SensorSize: {x: 0.5620438, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9096,7 +9096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6109492716592283686, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
       propertyPath: m_Radius
-      value: 0.16
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 6109492716592283687, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
       propertyPath: gunPlacements.Array.size
@@ -9122,6 +9122,14 @@ PrefabInstance:
       propertyPath: gunPlacements.Array.data[4]
       value: 
       objectReference: {fileID: 6109492717486906158}
+    - target: {fileID: 8920094902221587697, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: m_Pitch
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920094902221587697, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5f22917b3404ba6b4dbebbe8ef4f4c, type: 3}
 --- !u!114 &6109492717486906157 stripped

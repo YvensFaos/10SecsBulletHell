@@ -19,6 +19,10 @@ MonoBehaviour:
     randomize: 0
   - enemy: {fileID: 3909520660711728059, guid: a8153f62cdd1447f492aaf9135484bdf, type: 3}
     minAmount: 1
-    maxAmount: 3
+    maxAmount: 4
     randomize: 1
+  - enemy: {fileID: 4880355025010124347, guid: 46538648bc9dc4589983aea69f3d051f, type: 3}
+    minAmount: 1
+    maxAmount: 0
+    randomize: 0
   enemyPositionPrefab: {fileID: 0}

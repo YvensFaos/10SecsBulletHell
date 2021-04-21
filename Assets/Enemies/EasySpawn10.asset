@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemy: {fileID: 5934615072090512061, guid: cfdfaa2acf2984b068317685d568048d, type: 3}
-    minAmount: 2
-    maxAmount: 4
+    minAmount: 4
+    maxAmount: 6
     randomize: 1
+  - enemy: {fileID: 2525151011346058662, guid: fcc8b40b2621442cabb24602886c1325, type: 3}
+    minAmount: 2
+    maxAmount: 0
+    randomize: 0
   enemyPositionPrefab: {fileID: 0}

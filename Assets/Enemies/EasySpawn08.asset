@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemy: {fileID: 443259051647831139, guid: 2ca8c9c10b4d2449c8648494ac293f80, type: 3}
-    minAmount: 2
-    maxAmount: 4
+    minAmount: 3
+    maxAmount: 5
     randomize: 1
   - enemy: {fileID: 4880355025010124347, guid: 46538648bc9dc4589983aea69f3d051f, type: 3}
-    minAmount: 2
-    maxAmount: 4
+    minAmount: 3
+    maxAmount: 5
     randomize: 1
   - enemy: {fileID: 2953178417664053586, guid: fc3bebececeb54c27b071bb673e8031c, type: 3}
     minAmount: 1
     maxAmount: 2
     randomize: 1
+  - enemy: {fileID: 2525151011346058662, guid: fcc8b40b2621442cabb24602886c1325, type: 3}
+    minAmount: 2
+    maxAmount: 0
+    randomize: 0
   enemyPositionPrefab: {fileID: 0}

@@ -4,6 +4,8 @@ public class DifficultyController : MonoBehaviour
 {
     [SerializeField]
     private GameObject maximumLevelReachedObject;
+    [SerializeField] 
+    private GameObject releaseFinalBossObject;
 
     public void ClickMe()
     {
@@ -17,6 +19,7 @@ public class DifficultyController : MonoBehaviour
         if (maxLevelReached)
         {
             maximumLevelReachedObject.SetActive(true);
+            releaseFinalBossObject.SetActive(true);
             gameObject.SetActive(false);
         }
     }

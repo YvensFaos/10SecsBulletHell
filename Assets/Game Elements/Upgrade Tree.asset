@@ -58,21 +58,21 @@ MonoBehaviour:
     - 7
   - requirements: 1
     id: 7
-    cost: 40
+    cost: 20
     type: 3
     increment: 1
     unlocks:
     - 8
   - requirements: 1
     id: 8
-    cost: 80
+    cost: 40
     type: 3
     increment: 1
     unlocks:
     - 9
   - requirements: 1
     id: 9
-    cost: 100
+    cost: 80
     type: 3
     increment: 1
     unlocks: []
@@ -85,7 +85,7 @@ MonoBehaviour:
     - 11
   - requirements: 1
     id: 11
-    cost: 40
+    cost: 20
     type: 0
     increment: 1
     unlocks: []
@@ -110,20 +110,20 @@ MonoBehaviour:
     - 14
   - requirements: 1
     id: 14
-    cost: 60
+    cost: 12
     type: 1
     increment: 2
     unlocks: []
   - requirements: 1
     id: 15
-    cost: 60
+    cost: 30
     type: 6
     increment: 1
     unlocks:
     - 16
   - requirements: 1
     id: 16
-    cost: 80
+    cost: 50
     type: 6
     increment: 1
     unlocks: []

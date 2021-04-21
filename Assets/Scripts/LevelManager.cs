@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
       _middlePointX = (_minPosition.x + _maxPosition.x) / 2.0f;
    }
 
-   public void SpawnMore(bool shouldProgress = false)
+   public bool SpawnMore(bool shouldProgress = false)
    {
       if (shouldProgress)
       {
@@ -51,6 +51,8 @@ public class LevelManager : MonoBehaviour
       {
          LeanPool.Spawn(spawnEnemy.enemyPositionPrefab);
       }
+
+      return MaxLevelReached();
    }
    
    private void SpawnListOfEnemies(List<SpawnInfo> spawnInfos)
@@ -88,4 +90,6 @@ public class LevelManager : MonoBehaviour
    }
 
    public int GetCurrentLevel() => _spawnEnemiesIndex + 1;
+
+   public bool MaxLevelReached() => _spawnEnemiesIndex >= spawnEnemiesSOs.Count - 1;
 }

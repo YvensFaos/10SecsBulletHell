@@ -82,6 +82,7 @@
           <e p="CounterBehavior.cs" t="Include" />
           <e p="CustomMechanicScript.cs" t="Include" />
           <e p="DefaultEnemyScript.cs" t="Include" />
+          <e p="DifficultyController.cs" t="Include" />
           <e p="EnemyPriority.cs" t="Include" />
           <e p="EnemyPriorityEnum.cs" t="Include" />
           <e p="EnemyPrioritySO.cs" t="Include" />

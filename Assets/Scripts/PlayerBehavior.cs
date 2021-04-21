@@ -123,14 +123,14 @@ public class PlayerBehavior : MonoBehaviour
             destructionParticles.Play();
             _controllable = false;
             destructionSound.Play();
-        }
-        else
-        {
-            GameLogic.GetInstance().CameraShake(0.5f);
             if (HasShieldUnlocked())
             {
                 shieldBehavior.gameObject.SetActive(false);
             }
+        }
+        else
+        {
+            GameLogic.GetInstance().CameraShake(0.5f);
             damageParticles.Play();
             hitSound.Play();
         }
@@ -173,7 +173,8 @@ public class PlayerBehavior : MonoBehaviour
         _controllable = true;
         if (HasShieldUnlocked())
         {
-            shieldBehavior.TurnShieldOn();
+            //Calls the TurnShieldOn automatically OnEnable
+            shieldBehavior.gameObject.SetActive(true);   
         }
     }
     

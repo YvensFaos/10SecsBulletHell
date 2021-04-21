@@ -851,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &288883676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 389237915}
-  averageSample: 10
+  averageSample: 50
 --- !u!114 &389237915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,8 +1853,8 @@ MonoBehaviour:
 
     SURVIVE AS MUCH AS POSSIBLE
 
-    UPGRADE,
-    EVOLVE, REPEAT'
+    EVADE,
+    EVOLVE, (R)EPEAT'
 --- !u!222 &469767421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2218,7 +2218,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.05
+  m_fontSize: 68
   m_fontSizeBase: 65.98
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   enemyBulletsTransform: {fileID: 1670187663}
   damageParticlesTransform: {fileID: 207600915}
   destructionParticlesTransform: {fileID: 380919348}
-  infiniteXp: 1
+  infiniteXp: 0
 --- !u!4 &693563805
 Transform:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeTree: {fileID: 11400000, guid: 463d0a6f44bc849d6af5a0b396f011c5, type: 2}
   panelController: {fileID: 449836000}
-  internalInflationIncrease: 0.2
+  internalInflationIncrease: 0.25
 --- !u!1 &700658314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version 0.3 Evolving the Survival
+  m_Text: Version 0.4 Surviving
 --- !u!222 &740304514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5441,7 +5441,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5619048, y: 1}
+    m_SensorSize: {x: 0.56230366, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

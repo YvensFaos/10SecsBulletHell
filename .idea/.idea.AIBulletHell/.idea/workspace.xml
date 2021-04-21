@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UpgradeBtn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UpgradeBtn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

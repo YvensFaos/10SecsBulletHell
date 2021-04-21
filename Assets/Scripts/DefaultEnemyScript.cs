@@ -150,7 +150,7 @@ public class DefaultEnemyScript : MonoBehaviour
                     {
                         if (transform.position.y < GameLogic.GetInstance().Level.LimitY)
                         {
-                            Die();
+                            Removal();
                         }
                     });
                     break;
@@ -209,19 +209,22 @@ public class DefaultEnemyScript : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void Removal()
     {
         _internalTween.Kill();
         StopCoroutine(_logicCoroutine);
-        destructionSound.Play();
         LeanPool.Despawn(this, 0.8f);
+        _dead = true;
+    }
 
+    private void Die()
+    {
+        Removal();
+        destructionSound.Play();
         var particles = LeanPool.Spawn(destructionParticles, transform.position, Quaternion.identity,
             GameLogic.GetInstance().DestructionParticlesTransform());
         particles.Play();
         LeanPool.Despawn(particles, 2.0f);
-
-        _dead = true;
     }
 
     private EnemyPriorityEnum GetAction()

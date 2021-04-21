@@ -49,13 +49,13 @@ public class TimeMeter : MonoBehaviour
         _timerTween.Kill();
         hpText.text = "0";
         shieldText.text = "0";
-        levelText.text = "L: 0";
+        levelText.text = "Danger: 0";
     }
 
     public void Update()
     {
         hpText.text = _player.GetCurrentHealth().ToString();
         shieldText.text = _shieldBehavior.GetCurrentStrength().ToString();
-        levelText.text = "L: " + _levelManager.GetCurrentLevel();
+        levelText.text = "Danger: " + _levelManager.GetCurrentLevel();
     }
 }

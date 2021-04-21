@@ -51,7 +51,8 @@ public class LevelManager : MonoBehaviour
       {
          LeanPool.Spawn(spawnEnemy.enemyPositionPrefab);
       }
-
+      
+      GameLogic.GetInstance().XpPointsLabel().UpdateValues();
       return MaxLevelReached();
    }
    

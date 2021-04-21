@@ -23,6 +23,7 @@ public class GameLogic : MonoBehaviour
     private float rebirthCost = 0.8f;
 
     private int _xpPerRound = 1;
+    private int _xpPoints;
 
     [Header("Controllers")] 
     [SerializeField] private XpPointsLabel xpPointsLabel;
@@ -75,8 +76,6 @@ public class GameLogic : MonoBehaviour
         #endif
     }
 
-    private int _xpPoints;
-
     public void StartGame()
     {
         _player.AllowControl(true);
@@ -92,10 +91,7 @@ public class GameLogic : MonoBehaviour
     public void NotifyTimesUp()
     {
         _xpPoints += _xpPerRound;
-        if (xpPointsLabel != null)
-        {
-            xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
-        }
+        xpPointsLabel.UpdateXpPointsLabel();
 
         StartLevel();
     }
@@ -116,7 +112,7 @@ public class GameLogic : MonoBehaviour
         if (_xpPoints - cost >= 0)
         {
             _xpPoints -= cost;
-            xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
+            xpPointsLabel.UpdateXpPointsLabel();
             return true;
         }
 
@@ -148,7 +144,7 @@ public class GameLogic : MonoBehaviour
     public void RebirthPlayer()
     {
         _xpPoints = Mathf.FloorToInt(_xpPoints - (_xpPoints * rebirthCost));
-        xpPointsLabel.UpdateXpPointsLabel(_xpPoints);
+        xpPointsLabel.UpdateXpPointsLabel();
         _player.RebirthPlayer();
         _timeMeter.StartTimeMeter();
     }
@@ -159,16 +155,20 @@ public class GameLogic : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
     }
 
-    public int GetXpPoints() => _xpPoints;
     public void CameraShake(float time) => cameraShake.ShakeCameraFor(time);
 
     public void CameraShake(float time, float amplitude, float frequency, Vector3 pivot) =>
         cameraShake.ShakeCameraFor(time, amplitude, frequency, pivot);
 
     public PlayerUpgradeManager UpgradeManager() => playerUpgrade;
+    public XpPointsLabel XpPointsLabel() => xpPointsLabel;
+    public int GetXp() => _xpPoints;
+    public int GetXpPerRound() => _xpPerRound;
     
     public Transform PlayerBulletsTransform() => playerBulletsTransform;
     public Transform EnemyBulletsTransform() => enemyBulletsTransform;
     public Transform DamageParticlesTransform() => damageParticlesTransform;
     public Transform DestructionParticlesTransform() => destructionParticlesTransform;
+
+    
 }

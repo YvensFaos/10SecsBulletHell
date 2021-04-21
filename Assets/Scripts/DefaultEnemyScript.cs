@@ -180,7 +180,7 @@ public class DefaultEnemyScript : MonoBehaviour
         gunPlacements.ForEach(placement =>
         {
             var bullet = LeanPool.Spawn(defaultBullet, placement.transform.position, Quaternion.identity,
-                GameLogic.GetInstance().PlayerBulletsTransform());
+                GameLogic.GetInstance().EnemyBulletsTransform());
             bullet.SetDirection(placement.GetDirection());
             attackSound.Play();
         });

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a789f2439664cf1b73c11edbca04473, type: 3}
-  m_Name: Always Cusom Priority
+  m_Name: Final Boss
   m_EditorClassIdentifier: 
   priority:
-    aggresivity: 0
+    aggresivity: 60
     defensive: 0
-    moving: 90
+    moving: 0
     waiting: 10
-    customMechanic: 0
-  alwaysUseCustomMechanic: 1
+    customMechanic: 30
+  alwaysUseCustomMechanic: 0

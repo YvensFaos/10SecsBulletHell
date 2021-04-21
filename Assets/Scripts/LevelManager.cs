@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,6 +29,10 @@ public class LevelManager : MonoBehaviour
    private float _middlePointX;
    
    private int _spawnEnemiesIndex;
+
+   [SerializeField] private DefaultEnemyScript finalBoss;
+   [SerializeField] private Transform finalBossSpawnPoint;
+   [SerializeField] private Transform finalBossFightPoint;
 
    private void Awake()
    {
@@ -73,6 +78,12 @@ public class LevelManager : MonoBehaviour
             enemy.Initiate(position.x < _middlePointX);            
          }
       });
+   }
+
+   public void SpawnFinalBoss()
+   {
+      var spawnedEnemy = LeanPool.Spawn(finalBoss, finalBossSpawnPoint.position, Quaternion.identity);
+      spawnedEnemy.transform.DOMove(finalBossFightPoint.position, 6.0f).OnComplete(() => spawnedEnemy.Initiate());
    }
    
    private void OnDrawGizmos()

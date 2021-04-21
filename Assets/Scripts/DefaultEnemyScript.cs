@@ -79,7 +79,7 @@ public class DefaultEnemyScript : MonoBehaviour
         var levelManager = GameLogic.GetInstance().Level;
         _minPosition = levelManager.MinPosition;
         _maxPosition = levelManager.MaxPosition;
-        Initiate();
+        InitSetup(false);
     }
 
     private void OnEnable()
@@ -92,6 +92,13 @@ public class DefaultEnemyScript : MonoBehaviour
     /// </summary>
     public void Initiate(bool flipDirection = false)
     {
+        InitSetup(flipDirection);
+
+        StartCoroutine(_logicCoroutine);
+    }
+
+    private void InitSetup(bool flipDirection)
+    {
         _internalCurvePosition = 0.0f;
         _logicCoroutine = EnemyLogic();
         _movementDirection = 1;
@@ -100,8 +107,6 @@ public class DefaultEnemyScript : MonoBehaviour
         {
             _movementDirection = -1;
         }
-
-        StartCoroutine(_logicCoroutine);
     }
 
     private IEnumerator EnemyLogic()
@@ -212,7 +217,10 @@ public class DefaultEnemyScript : MonoBehaviour
     private void Removal()
     {
         _internalTween.Kill();
-        StopCoroutine(_logicCoroutine);
+        if (_logicCoroutine != null)
+        {
+            StopCoroutine(_logicCoroutine);    
+        }
         LeanPool.Despawn(this, 0.8f);
         _dead = true;
     }

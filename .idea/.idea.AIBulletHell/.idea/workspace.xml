@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="" />
+    <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MoveRandomlyMechanic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MoveRandomlyMechanic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnEnemies.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnEnemies.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Always Cusom Priority.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Always Cusom Priority.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyAssets/kenney_fontpackage/Fonts/Kenney Pixel Square SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyAssets/kenney_fontpackage/Fonts/Kenney Pixel Square SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KenneyAssets/kenney_fontpackage/Fonts/Texts Kenney Pixel Square SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KenneyAssets/kenney_fontpackage/Fonts/Texts Kenney Pixel Square SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,11 +50,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpinningMotion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ConfigPanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Enemies/EasySpawn00.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnEnemies.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPrioritySO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlShaderGraphMaterial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CounterBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPriorityEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RotateAround.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Enemies/EasySpawn01.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Pool/Scripts/LeanGameObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
@@ -47,6 +65,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Pool/Scripts/LeanPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MoveRandomlyMechanic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPriority.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerUpgradeManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -74,16 +93,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpinningMotion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DifficultyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeMeter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XpPointsLabel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ReusableScripts/MixerAudioSlider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ConfigPanelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RotateAround.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnEnemies.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MoveRandomlyMechanic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
       </list>
     </option>
   </component>

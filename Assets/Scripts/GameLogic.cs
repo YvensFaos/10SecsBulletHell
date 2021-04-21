@@ -169,6 +169,4 @@ public class GameLogic : MonoBehaviour
     public Transform EnemyBulletsTransform() => enemyBulletsTransform;
     public Transform DamageParticlesTransform() => damageParticlesTransform;
     public Transform DestructionParticlesTransform() => destructionParticlesTransform;
-
-    
 }

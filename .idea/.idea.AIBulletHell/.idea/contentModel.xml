@@ -90,6 +90,7 @@
           <e p="GameLogic.cs" t="Include" />
           <e p="GunPosition.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
+          <e p="MoveRandomlyMechanic.cs" t="Include" />
           <e p="PlayerBehavior.cs" t="Include" />
           <e p="PlayerUpgradeManager.cs" t="Include" />
           <e p="ReusableScripts" t="Include">
@@ -101,8 +102,10 @@
             <e p="OpenURL.cs" t="Include" />
             <e p="RemoveMyRenderer.cs" t="Include" />
           </e>
+          <e p="RotateAround.cs" t="Include" />
           <e p="ShieldBehavior.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="SpawnEnemies.cs" t="Include" />
           <e p="SpawnEnemiesSO.cs" t="Include" />
           <e p="SpawnInfo.cs" t="Include" />
           <e p="SpinningMotion.cs" t="Include" />

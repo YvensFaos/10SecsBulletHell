@@ -4983,7 +4983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularShieldSize: {x: 1, y: 1, z: 1}
   shieldAnimationTimer: 1
-  shieldStrength: 1
+  shieldStrength: 2
   playerShield: 0
   rechargeable: 0
   cooldown: 0
@@ -10525,6 +10525,7 @@ MonoBehaviour:
   attackScript: {fileID: 0}
   customMechanicScripts: []
   shieldBehavior: {fileID: 2096611798065354839}
+  finalBoss: 0
   priorities: {fileID: 11400000, guid: 63bcea5423d2f4010a5a80254f6c9d78, type: 2}
   damageParticles: {fileID: 8619636292945253566}
   destructionParticles: {fileID: 6163181853520210460}

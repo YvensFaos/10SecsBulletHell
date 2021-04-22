@@ -36,6 +36,8 @@ public class DefaultEnemyScript : MonoBehaviour
     [SerializeField] private List<CustomMechanicScript> customMechanicScripts;
     [SerializeField] private ShieldBehavior shieldBehavior;
 
+    [SerializeField] private bool finalBoss;
+
     private bool _hasShield;
     private bool _dead;
 
@@ -52,7 +54,6 @@ public class DefaultEnemyScript : MonoBehaviour
 
     [SerializeField] private AudioSource hitSound;
     [SerializeField] private AudioSource destructionSound;
-
 
     /// <summary>
     /// Used to calculated the added priority values and facilitate the querying for actions.
@@ -233,6 +234,11 @@ public class DefaultEnemyScript : MonoBehaviour
             GameLogic.GetInstance().DestructionParticlesTransform());
         particles.Play();
         LeanPool.Despawn(particles, 2.0f);
+
+        if (finalBoss)
+        {
+            GameLogic.GetInstance().ShowVictoryScreen();
+        }
     }
 
     private EnemyPriorityEnum GetAction()

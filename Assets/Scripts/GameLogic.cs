@@ -32,6 +32,7 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private PlayerUpgradeManager playerUpgrade;
     [SerializeField] private UpgradePanelController upgradePanel;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject victoryScreen;
 
     [Header("LeanPool Prefabs")] 
     [SerializeField] private Transform playerBulletsTransform;
@@ -170,6 +171,13 @@ public class GameLogic : MonoBehaviour
     public XpPointsLabel XpPointsLabel() => xpPointsLabel;
     public int GetXp() => _xpPoints;
     public int GetXpPerRound() => _xpPerRound;
+
+    public void ShowVictoryScreen()
+    {
+        PauseGame();
+        _timeMeter.StopTimeMeter();
+        victoryScreen.SetActive(true);
+    }
     
     public Transform PlayerBulletsTransform() => playerBulletsTransform;
     public Transform EnemyBulletsTransform() => enemyBulletsTransform;

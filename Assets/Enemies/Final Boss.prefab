@@ -755,8 +755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f153a4b53bbd440f923db8934854ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
-  actTimer: 1.3
+  health: 500
+  actTimer: 1.1
   movementCurve:
     serializedVersion: 2
     m_Curve:
@@ -798,6 +798,7 @@ MonoBehaviour:
   - {fileID: 2491697066441955325}
   - {fileID: 6233050534793440004}
   shieldBehavior: {fileID: 0}
+  finalBoss: 1
   priorities: {fileID: 11400000, guid: 8b91d741873f448d09b7a37f6b95448c, type: 2}
   damageParticles: {fileID: 8594052201965998399}
   destructionParticles: {fileID: 6148302197546119069}

@@ -4982,8 +4982,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regularShieldSize: {x: 1, y: 1, z: 1}
-  shieldAnimationTimer: 0.5
-  shieldStrength: 3
+  shieldAnimationTimer: 1
+  shieldStrength: 1
   playerShield: 0
   rechargeable: 0
   cooldown: 0

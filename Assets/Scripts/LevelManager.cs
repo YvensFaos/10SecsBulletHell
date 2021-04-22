@@ -25,9 +25,7 @@ public class LevelManager : MonoBehaviour
    private float _limitPosition;
 
    public float LimitY => _limitPosition;
-   
    private float _middlePointX;
-   
    private int _spawnEnemiesIndex;
 
    [SerializeField] private DefaultEnemyScript finalBoss;

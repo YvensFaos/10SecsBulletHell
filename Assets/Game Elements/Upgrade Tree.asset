@@ -88,19 +88,22 @@ MonoBehaviour:
     cost: 20
     type: 0
     increment: 1
-    unlocks: []
+    unlocks:
+    - 19
   - requirements: 1
     id: 12
     cost: 30
     type: 7
     increment: 0.02
-    unlocks: []
+    unlocks:
+    - 20
   - requirements: 1
     id: 12
     cost: 60
     type: 5
     increment: 2
-    unlocks: []
+    unlocks:
+    - 18
   - requirements: 0
     id: 13
     cost: 6
@@ -126,4 +129,29 @@ MonoBehaviour:
     cost: 50
     type: 6
     increment: 1
+    unlocks:
+    - 17
+  - requirements: 1
+    id: 17
+    cost: 60
+    type: 6
+    increment: 0.5
+    unlocks: []
+  - requirements: 1
+    id: 18
+    cost: 60
+    type: 5
+    increment: 2
+    unlocks: []
+  - requirements: 1
+    id: 19
+    cost: 40
+    type: 0
+    increment: 2
+    unlocks: []
+  - requirements: 1
+    id: 20
+    cost: 40
+    type: 7
+    increment: 0.01
     unlocks: []

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0126b436-6d95-4bd2-a330-ffc1930196ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AIBulletHell/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DifficultyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DifficultyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,14 +85,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ConfigPanelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradePanelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpgradeButtonLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RotateAround.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnEnemies.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MoveRandomlyMechanic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEnemyScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DifficultyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShieldBehavior.cs" />
       </list>
     </option>
   </component>
@@ -140,9 +140,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1619007825273">
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1619098201683">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
-    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/1680.-845.1080.1895/0.25.1680.1025@0.25.1680.1025" timestamp="1619007825273" />
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/1680.-845.1080.1895/0.25.1680.1025@0.25.1680.1025" timestamp="1619098201683" />
   </component>
 </project>

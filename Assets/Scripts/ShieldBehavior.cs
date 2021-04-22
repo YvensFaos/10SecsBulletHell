@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using Lean.Pool;
@@ -13,6 +14,7 @@ public class ShieldBehavior : MonoBehaviour
 
     private bool _shieldIsOn;
     private int _shieldCurrentStrength;
+    private IEnumerator _rechargeRoutine;
 
     [SerializeField] private bool rechargeable;
     [SerializeField] private float cooldown;
@@ -22,7 +24,7 @@ public class ShieldBehavior : MonoBehaviour
     {
         _shieldCurrentStrength = shieldStrength;
     }
-    
+
     private void OnEnable()
     {
         TurnShieldOn();
@@ -36,7 +38,23 @@ public class ShieldBehavior : MonoBehaviour
             _shieldIsOn = true;
             transform.localScale = Vector3.zero;
             transform.DOScale(regularShieldSize, shieldAnimationTimer);
+
+            if (playerShield)
+            {
+                SetupRechargingCoroutine();
+            }
         }
+    }
+
+    private void SetupRechargingCoroutine()
+    {
+        if (_rechargeRoutine != null)
+        {
+            StopCoroutine(_rechargeRoutine);
+        }
+
+        _rechargeRoutine = RechargeCouroutine();
+        StartCoroutine(_rechargeRoutine);
     }
 
     private void TurnShieldOff()
@@ -59,13 +77,29 @@ public class ShieldBehavior : MonoBehaviour
     {
         var damage = (fromEnemy) ? 1 : GameLogic.GetInstance().Player.GetPlayerBulletDamage();
         _shieldCurrentStrength -= damage;
+
         if (shieldSound != null)
         {
             shieldSound.Play();
         }
+
         if (_shieldCurrentStrength <= 0)
         {
             TurnShieldOff();
+        }
+    }
+
+    private IEnumerator RechargeCouroutine()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => _shieldCurrentStrength < shieldStrength);
+            yield return new WaitForSeconds(cooldown);
+            _shieldCurrentStrength = Mathf.Clamp(_shieldCurrentStrength + 1, 0, shieldStrength);
+            if (shieldSound != null)
+            {
+                shieldSound.Play();
+            }
         }
     }
 
@@ -96,7 +130,11 @@ public class ShieldBehavior : MonoBehaviour
     }
 
     public void IncreaseShieldStrenght(int increment) => shieldStrength += increment;
-    public void ReduceShieldCoolddown(float decrement) => cooldown -= decrement;
+    public void ReduceShieldCoolddown(float decrement)
+    {
+        cooldown -= decrement;
+        SetupRechargingCoroutine();
+    }
 
     public bool IsShieldOn() => _shieldIsOn;
 

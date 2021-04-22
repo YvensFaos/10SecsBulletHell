@@ -141,6 +141,12 @@ public class GameLogic : MonoBehaviour
         _xpPerRound++;
     }
 
+    public void GainXp(int value)
+    {
+        _xpPoints += value;
+        xpPointsLabel.UpdateXpPointsLabel();
+    }
+
     public void RebirthPlayer()
     {
         _xpPoints = Mathf.FloorToInt(_xpPoints - (_xpPoints * rebirthCost));

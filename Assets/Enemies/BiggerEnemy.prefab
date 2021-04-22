@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 4880355025010124341}
   - component: {fileID: 4880355025010124347}
   - component: {fileID: 6918908021977104714}
+  - component: {fileID: 3485080013391413428}
   m_Layer: 7
   m_Name: BiggerEnemy
   m_TagString: Untagged
@@ -474,6 +475,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3485080013391413428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880355025010124342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f10cdcb972834d6f98f0b5a1bb06a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropWhenDeadObjects:
+  - {fileID: 6386168201428307383, guid: 160174cfc027849f982b03103f647c98, type: 3}
+  - {fileID: 100104952398016213, guid: 95c10ebae8cf842398b7c33d17bff235, type: 3}
+  dropChance: 0.4
+  dropIndividually: 1
+  poolable: 1
 --- !u!1 &4880355025377587852
 GameObject:
   m_ObjectHideFlags: 0

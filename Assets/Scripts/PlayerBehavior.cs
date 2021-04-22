@@ -167,7 +167,12 @@ public class PlayerBehavior : MonoBehaviour
 
     public void RecoverHealth()
     {
-        _currentHealth = health;
+        RecoverHealth(health);
+    }
+    
+    public void RecoverHealth(int value)
+    {
+        _currentHealth = Mathf.Clamp(_currentHealth + value, 0, health);
     }
 
     public void RebirthPlayer()
